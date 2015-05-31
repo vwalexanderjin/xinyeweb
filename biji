@@ -1,0 +1,20 @@
+<?php
+use yii\jui\DataPicker;
+echo DatePicker::widget(['name'=>'date']);
+
+过滤器
+public function filterAceControl {
+    $filerChain->run();
+}
+例子：
+public function filters() {
+    return [
+        'postOnly + edit,create',
+        [
+            'filters.xxxFilter - edit,create',
+            'unit' => 'second',
+        ]
+    ];
+}
+
+模型 表单模型Model、ActiveRecord
