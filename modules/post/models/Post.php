@@ -2,6 +2,7 @@
 
 namespace app\modules\post\models;
 
+use app\modules\category\models\Category;
 use Yii;
 
 /**
@@ -53,7 +54,8 @@ class Post extends \app\core\base\BaseActiveRecord
             [['seo_title', 'seo_keywords', 'seo_description'], 'string', 'max' => 80],
             [['template'], 'string', 'max' => 30],
             [['tags', 'info'], 'string', 'max' => 255],
-            [['type'], 'string', 'max' => 10]
+            [['type'], 'string', 'max' => 10],
+           // [['ctime','utime'],'safe']
         ];
     }
 
@@ -86,6 +88,24 @@ class Post extends \app\core\base\BaseActiveRecord
         ];
     }
 
+    public function getCategory() {
+        return $this->hasOne(Category::className(), ['id'=>'cid']);
+    }
+
+    public static function status() {
+        return [
+            '0' => '存档',
+            '1' => '发布',
+        ];
+    }
+
+    public static function isHot() {
+        return [
+            '0' => '否',
+            '1' => '是',
+        ];
+    }
+
     public function beforeSave($insert) {
         if(parent::beforeSave($insert)) {
             if ($insert) {
@@ -93,6 +113,7 @@ class Post extends \app\core\base\BaseActiveRecord
             } else {
                 $this->utime = time();
             }
+            return true;
             //$this->tags && $this->tags = str_replace(['，' , ', ' , ' ,',' ' ],',', $this->tags);
         } else{
             return false;

@@ -19,6 +19,9 @@ $config = [
         'post' => [
             'class' => 'app\modules\post\Module',
         ],
+        'category' => [
+            'class' => 'app\modules\category\Module',
+        ],
     ],
     'components' => [
         'request' => [

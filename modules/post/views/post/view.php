@@ -12,9 +12,10 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="post-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <!--<h1><?/*= Html::encode($this->title) */?></h1>-->
 
     <p>
+        <?= Html::a(Yii::t('app', 'Back To Posts'), ['index'], ['class' => 'btn btn-success']) ?>
         <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
@@ -24,11 +25,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
+    <br/>
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            //'id',
             'title',
             'title_second',
             'redirect_url:url',
@@ -39,16 +41,38 @@ $this->params['breadcrumbs'][] = $this->title;
             'seo_description',
             'template',
             'tags',
-            'ishot',
-            'status',
+            [
+                'attribute' => 'ishot',
+                'value' => \yii\helpers\ArrayHelper::getValue($model->isHot(),$model->ishot)
+            ],
+            [
+                'attribute' => 'status',
+                'value' => \yii\helpers\ArrayHelper::getValue($model->status(), $model->status)
+            ],
             'info',
             'content:ntext',
-            'ctime:datetime',
-            'utime:datetime',
+            //'ctime:datetime',
+            [
+                'attribute'=> 'ctime',
+                'value' => date('Y-m-d', $model->ctime),
+                'options' => [
+                    'width'=>300
+                ]
+            ],
+            //'utime:datetime',
+            [
+                'attribute'=> 'utime',
+                'value' => date('Y-m-d', $model->utime)
+            ],
             'type',
-            'cid',
-            'uid',
+            [
+                'attribute'=>'cid',
+                'value' => $model->category->name
+            ],
+            //'uid',
         ],
+        'template' => '<tr><th width="10%">{label}</th><td>{value}</td></tr>',
+        'options' => ['class' => 'table table-striped table-hover table-bordered detail-view'],
     ]) ?>
 
 </div>
