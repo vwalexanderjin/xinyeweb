@@ -25,7 +25,7 @@ class AdminAsset extends AssetBundle
     public $js = [
         'static/js/jquery/jquery.form.js',
         'static/js/jquery/jquery.tools.min.js',
-        'static/js/base.js',
+        'static/admin/js/base.js',
         'static/js/My97DatePicker/WdatePicker.js',
         'static/js/validationEngine/jquery.validationEngine.min.js',
         'static/js/zebra_dialog/zebra_dialog.js',

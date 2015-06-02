@@ -1,8 +1,7 @@
 <?php
 
-namespace app\modules\post\controllers;
+namespace app\modules\admin\controllers;
 
-use app\core\base\backend\BackendBaseController;
 use Yii;
 use app\modules\post\models\Post;
 use app\modules\post\models\search\PostSearch;
@@ -13,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * PostController implements the CRUD actions for Post model.
  */
-class PostController extends BackendBaseController
+class PostController extends Controller
 {
     public function behaviors()
     {
@@ -63,12 +62,7 @@ class PostController extends BackendBaseController
     {
         $model = new Post();
 
-        if ($model->load(Yii::$app->request->post())) {
-            if ($model->save()) {
-                echo "111";
-            } else {
-                print_r($model->errors);
-            }
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [

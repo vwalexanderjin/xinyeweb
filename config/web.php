@@ -33,7 +33,8 @@ $config = [
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
-            'errorAction' => 'error/error',
+            //'errorAction' => 'error/error',
+            'errorAction' => 'site/error',
         ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager',

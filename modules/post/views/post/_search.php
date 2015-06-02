@@ -19,11 +19,25 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title') ?>
 
+    <?= $form->field($model, 'title_second') ?>
+
+    <?= $form->field($model, 'redirect_url') ?>
+
     <?= $form->field($model, 'thumb') ?>
 
-    <?= $form->field($model, 'from') ?>
+    <?php // echo $form->field($model, 'from') ?>
 
-    <?= $form->field($model, 'ishot') ?>
+    <?php // echo $form->field($model, 'seo_title') ?>
+
+    <?php // echo $form->field($model, 'seo_keywords') ?>
+
+    <?php // echo $form->field($model, 'seo_description') ?>
+
+    <?php // echo $form->field($model, 'template') ?>
+
+    <?php // echo $form->field($model, 'tags') ?>
+
+    <?php // echo $form->field($model, 'ishot') ?>
 
     <?php // echo $form->field($model, 'status') ?>
 

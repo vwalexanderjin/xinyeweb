@@ -19,7 +19,7 @@ class PostSearch extends Post
     {
         return [
             [['id', 'ishot', 'status', 'ctime', 'utime', 'cid', 'uid'], 'integer'],
-            [['title', 'thumb', 'from', 'info', 'content', 'type'], 'safe'],
+            [['title', 'title_second', 'redirect_url', 'thumb', 'from', 'seo_title', 'seo_keywords', 'seo_description', 'template', 'tags', 'info', 'content', 'type'], 'safe'],
         ];
     }
 
@@ -66,8 +66,15 @@ class PostSearch extends Post
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'title_second', $this->title_second])
+            ->andFilterWhere(['like', 'redirect_url', $this->redirect_url])
             ->andFilterWhere(['like', 'thumb', $this->thumb])
             ->andFilterWhere(['like', 'from', $this->from])
+            ->andFilterWhere(['like', 'seo_title', $this->seo_title])
+            ->andFilterWhere(['like', 'seo_keywords', $this->seo_keywords])
+            ->andFilterWhere(['like', 'seo_description', $this->seo_description])
+            ->andFilterWhere(['like', 'template', $this->template])
+            ->andFilterWhere(['like', 'tags', $this->tags])
             ->andFilterWhere(['like', 'info', $this->info])
             ->andFilterWhere(['like', 'content', $this->content])
             ->andFilterWhere(['like', 'type', $this->type]);

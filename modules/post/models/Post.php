@@ -9,8 +9,15 @@ use Yii;
  *
  * @property integer $id
  * @property string $title
+ * @property string $title_second
+ * @property string $redirect_url
  * @property string $thumb
  * @property string $from
+ * @property string $seo_title
+ * @property string $seo_keywords
+ * @property string $seo_description
+ * @property string $template
+ * @property string $tags
  * @property integer $ishot
  * @property integer $status
  * @property string $info
@@ -23,7 +30,6 @@ use Yii;
  */
 class Post extends \app\core\base\BaseActiveRecord
 {
-
     /**
      * @inheritdoc
      */
@@ -38,12 +44,15 @@ class Post extends \app\core\base\BaseActiveRecord
     public function rules()
     {
         return [
-            [['title', 'thumb', 'from', 'info', 'content', 'ctime', 'utime'], 'required'],
+            [['title', 'title_second', 'redirect_url', 'thumb', 'from', 'seo_title', 'seo_keywords', 'seo_description', 'template', 'tags', 'info', 'content'], 'required'],
             [['ishot', 'status', 'ctime', 'utime', 'cid', 'uid'], 'integer'],
             [['content'], 'string'],
             [['title', 'thumb'], 'string', 'max' => 200],
+            [['title_second', 'redirect_url'], 'string', 'max' => 128],
             [['from'], 'string', 'max' => 50],
-            [['info'], 'string', 'max' => 255],
+            [['seo_title', 'seo_keywords', 'seo_description'], 'string', 'max' => 80],
+            [['template'], 'string', 'max' => 30],
+            [['tags', 'info'], 'string', 'max' => 255],
             [['type'], 'string', 'max' => 10]
         ];
     }
@@ -55,18 +64,39 @@ class Post extends \app\core\base\BaseActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'title' => Yii::t('app', 'Title'),
-            'thumb' => Yii::t('app', 'Thumb'),
-            'from' => Yii::t('app', 'From'),
-            'ishot' => Yii::t('app', '1,推荐   0,正常'),
-            'status' => Yii::t('app', '1,发布,   0存档'),
-            'info' => Yii::t('app', 'Info'),
-            'content' => Yii::t('app', 'Content'),
-            'ctime' => Yii::t('app', 'Ctime'),
-            'utime' => Yii::t('app', 'Utime'),
+            'title' => Yii::t('app', '标题'),
+            'title_second' => Yii::t('app', '副标题'),
+            'redirect_url' => Yii::t('app', '跳转地址'),
+            'thumb' => Yii::t('app', '封面图'),
+            'from' => Yii::t('app', '来源'),
+            'seo_title' => Yii::t('app', 'SEO标题'),
+            'seo_keywords' => Yii::t('app', 'SEO关键字'),
+            'seo_description' => Yii::t('app', 'SEO描述'),
+            'template' => Yii::t('app', '模板'),
+            'tags' => Yii::t('app', '标签'),
+            'ishot' => Yii::t('app', '推荐'),
+            'status' => Yii::t('app', '状态'),
+            'info' => Yii::t('app', '摘要'),
+            'content' => Yii::t('app', '内容'),
+            'ctime' => Yii::t('app', '发布时间'),
+            'utime' => Yii::t('app', '更新时间'),
             'type' => Yii::t('app', 'type: post case ...'),
-            'cid' => Yii::t('app', '分类id'),
-            'uid' => Yii::t('app', '作者id'),
+            'cid' => Yii::t('app', '分类'),
+            'uid' => Yii::t('app', '作者'),
         ];
+    }
+
+    public function beforeSave($insert) {
+        if(parent::beforeSave($insert)) {
+            if ($insert) {
+                $this->ctime = $this->utime = time();
+            } else {
+                $this->utime = time();
+            }
+            //$this->tags && $this->tags = str_replace(['，' , ', ' , ' ,',' ' ],',', $this->tags);
+        } else{
+            return false;
+        }
+
     }
 }
