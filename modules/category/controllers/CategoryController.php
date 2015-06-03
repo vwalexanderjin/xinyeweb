@@ -3,6 +3,7 @@
 namespace app\modules\category\controllers;
 
 use app\core\base\backend\BackendBaseController;
+use app\core\lib\Common;
 use Yii;
 use app\modules\category\models\Category;
 use app\modules\category\models\search\CategorySearch;
@@ -33,12 +34,10 @@ class CategoryController extends BackendBaseController
      */
     public function actionIndex()
     {
-        $searchModel = new CategorySearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        $model = Category::find()->all();
+        $newCate = \app\core\lib\Category::unlimitedForLevel($model,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'model' => $newCate
         ]);
     }
 
@@ -59,12 +58,14 @@ class CategoryController extends BackendBaseController
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($pid=0)
     {
+        $pid = isset($pid) ? $pid : 0;
         $model = new Category();
-
+        $model->loadDefaultValues();
+        $model->pid = $pid;
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -83,10 +84,12 @@ class CategoryController extends BackendBaseController
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            //return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'pid'   => $model->pid,
             ]);
         }
     }

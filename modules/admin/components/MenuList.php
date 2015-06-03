@@ -26,11 +26,11 @@ class MenuList
         ],
         '设置' => [
             'controller' => 'home',
-            'url' => 'config/default/index',
+            'url' => 'config/config/basic',
             'action' => [
                 [
                     'name' => '基本设置',
-                    'url' => 'config/basic/index'
+                    'url' => 'config/config/basic'
                 ],
                 [
                     'name' => 'SEO设置',
@@ -46,6 +46,10 @@ class MenuList
             'controller' => 'home',
             'url' => 'post/post/index',
             'action' => [
+                [
+                    'name' => '分类管理',
+                    'url' => 'category/category/index',
+                ],
                 [
                     'name' => '内容管理',
                     'url' => 'post/post/index',

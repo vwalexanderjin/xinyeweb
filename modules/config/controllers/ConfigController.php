@@ -23,7 +23,10 @@ class ConfigController extends BackendBaseController{
         $model = new BasicConfig();
 
         if ($model->load(\Yii::$app->request->post()) && $model->save()) {
-
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            $model->initValue();
+            return $this->render('basic',['model' => $model]);
         }
     }
 

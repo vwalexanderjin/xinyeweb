@@ -25,7 +25,7 @@ class BaseConfig extends BaseModel{
         }
     }
 
-    protected function initOneInternal($key, $defaultValue='') {
+    protected function initOneInternal($key, $defaultValue=' ') {
         $model = Config::findOne(['key'=>$key]);
         if ($model != null) {
             $this->$key = $model->val;

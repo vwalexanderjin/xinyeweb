@@ -16,6 +16,8 @@ use Yii;
  */
 class Category extends \app\core\base\BaseActiveRecord
 {
+    public $level;
+    public $html;
     /**
      * @inheritdoc
      */
@@ -30,7 +32,7 @@ class Category extends \app\core\base\BaseActiveRecord
     public function rules()
     {
         return [
-            [['pid', 'name', 'description', 'module', 'url'], 'required'],
+            [['pid', 'name', 'description', 'module','type'], 'required'],
             [['pid'], 'integer'],
             [['name', 'module'], 'string', 'max' => 50],
             [['description'], 'string', 'max' => 128],
@@ -50,14 +52,25 @@ class Category extends \app\core\base\BaseActiveRecord
             'description' => Yii::t('app', '分类描述'),
             'module' => Yii::t('app', '模型'),
             'url' => Yii::t('app', '外链'),
+            'rote' => Yii::t('app', '路由'),
+            'type' => Yii::t('app', '状态'),
+            'order' => Yii::t('app', '排序'),
         ];
     }
 
     public static function getCateList($module = null) {//获取按module查询的结果
         if ($module != null) {
-            return Category::find()->andWhere(['module'=>$module])->all();
+            $cateArr = Category::find()->andWhere(['module'=>$module])->all();
         } else {
-            return Category::find()->all();
+            $cateArr = Category::find()->all();
         }
+        return \app\core\lib\Category::unlimitedForLevel($cateArr);
+    }
+
+    public static function type() {
+        return [
+            '1' => '显示',
+            '0' => '隐藏',
+        ];
     }
 }
