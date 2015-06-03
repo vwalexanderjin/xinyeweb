@@ -33,7 +33,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl.'/static/admin/css/manage.css
     <?php $i++; endforeach;?>
         </div>
     </div>
-    <div class="mainB" id="mainB">
+    <div class="mainB" id="mainB" style="padding: 20px;">
         <iframe src="<?=Url::to('default/home')?>" name="win" id="win" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 </div>

@@ -22,6 +22,12 @@ $config = [
         'category' => [
             'class' => 'app\modules\category\Module',
         ],
+        'link' => [
+            'class' => 'app\modules\link\Module',
+        ],
+        'comment' => [
+            'class' => 'app\modules\comment\Module',
+        ],
     ],
     'components' => [
         'request' => [

@@ -51,8 +51,12 @@ class MenuList
                     'url' => 'post/post/index',
                 ],
                 [
+                    'name' => '链接管理',
+                    'url' => 'link/link/index',
+                ],
+                [
                     'name' => '评论管理',
-                    'url' => 'admin/category/index'
+                    'url' => 'comment/comment/index'
                 ],
                 [
                     'name' => '专题管理',
