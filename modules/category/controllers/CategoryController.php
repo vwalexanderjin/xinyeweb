@@ -35,7 +35,7 @@ class CategoryController extends BackendBaseController
     public function actionIndex()
     {
         $model = Category::find()->all();
-        $newCate = \app\core\lib\Category::unlimitedForLevel($model,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+        $newCate = \app\core\lib\Category::unlimitedForLevel($model,'_');
         return $this->render('index', [
             'model' => $newCate
         ]);

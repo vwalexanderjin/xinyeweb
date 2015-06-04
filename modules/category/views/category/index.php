@@ -10,6 +10,21 @@ use yii\helpers\ArrayHelper;
 
 $this->title = Yii::t('app', 'Categories');
 $this->params['breadcrumbs'][] = $this->title;
+$jsStr = <<<JS
+    $(function(){
+        $('tr[pid!=0]').hide();
+        $('.showPlus').toggle(function(){
+            $(this).removeClass().addClass('showMinus');
+            var index = $(this).parents('tr').attr('cid');
+            $('tr[pid=' + index + ']').show();
+        },function(){
+            $(this).removeClass().addClass('showPlus');
+            var index = $(this).parents('tr').attr('cid');
+            $('tr[pid=' + index + ']').hide();
+        })
+    });
+JS;
+$this->registerJs($jsStr);
 ?>
 <div class="category-index">
 
@@ -22,13 +37,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <br/>
 
-    <div class="grid-view" id="w0">
+    <div class="grid-view">
         <table class="table table-striped table-bordered"><thead>
-            <tr><th width="10%">ID</th><th>分类名称</th><th>路由</th><th>状态</th><th>操作</th></tr>
+            <tr pid="0"><th width="5%">ID</th><th width="5%">展开</th><th>分类名称</th><th>路由</th><th>状态</th><th>操作</th></tr>
             </thead>
             <tbody>
             <?php foreach($model as $v) : ?>
-            <tr><td><?=$v->id?></td>
+            <tr pid="<?=$v->pid?>" cid="<?=$v->id?>"><td><?=$v->id?></td>
+                <td><a href="javascript:void(0)" class="showPlus">aaa</a> </td>
                 <td><?=$v->html.$v->name?></td>
                 <td><?=$v->rote?></td>
                 <td><?=ArrayHelper::getValue(\app\modules\category\models\Category::type(),$v->type)?></td>
@@ -41,3 +57,4 @@ $this->params['breadcrumbs'][] = $this->title;
             </tbody></table> </div>
 
 </div>
+

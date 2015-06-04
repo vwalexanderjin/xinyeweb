@@ -121,3 +121,7 @@ body[dir='rtl'] .formError .formErrorArrow, body.rtl .formError .formErrorArrow 
 #error img { padding: 0 0 5px 260px; }
 #error .redirect a{text-decoration:none;font-size: 12px;color:#FFFF00;}
 #error .redirect a:hover{text-decoration:underline;color:#FFF;}
+
+/** category **/
+.showPlus {background:url("../images/showPlus.png") no-repeat; width: 5px; height: 8px; padding: 10px; border: 1px solid #000 }
+.showMinus {border: 2px dotted #006600}
