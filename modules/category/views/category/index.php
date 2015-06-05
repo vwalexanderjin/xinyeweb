@@ -11,20 +11,40 @@ use yii\helpers\ArrayHelper;
 $this->title = Yii::t('app', 'Categories');
 $this->params['breadcrumbs'][] = $this->title;
 $jsStr = <<<JS
-    $(function(){
+    // jQ 1.9版本以上移除了toggle 绑定多个click事件
+    /*$(document).ready(function() {
         $('tr[pid!=0]').hide();
         $('.showPlus').toggle(function(){
-            $(this).removeClass().addClass('showMinus');
+            $(this).removeClass('showPlus').addClass('showMinus');
             var index = $(this).parents('tr').attr('cid');
             $('tr[pid=' + index + ']').show();
         },function(){
-            $(this).removeClass().addClass('showPlus');
+            $(this).removeClass('showMinus').addClass('showPlus');
             var index = $(this).parents('tr').attr('cid');
             $('tr[pid=' + index + ']').hide();
         })
+    });*/
+    $(document).ready(function(){
+          $('tr[pid!=0]').hide();
+          $('.showPlus').on("click",function(){
+            if($(this).hasClass("glyphicon-minus")) {//已有表示已展开 所以点击关闭
+                $(this).removeClass("glyphicon-minus");
+                var index = $(this).parents('tr').attr('cid');
+                $('tr[pid=' + index + ']').hide();
+            } else {//没有表示已关闭 点击展开
+                $(this).addClass("glyphicon-minus");
+                var index = $(this).parents('tr').attr('cid');
+                $('tr[pid=' + index + ']').show();
+            }
+          })
     });
 JS;
 $this->registerJs($jsStr);
+
+$styleStr = <<<STYLE
+.showPlus {display:block; curosr:pointer}
+STYLE;
+$this->registerCss($styleStr);
 ?>
 <div class="category-index">
 
@@ -36,15 +56,14 @@ $this->registerJs($jsStr);
     </p>
 
     <br/>
-
     <div class="grid-view">
-        <table class="table table-striped table-bordered"><thead>
-            <tr pid="0"><th width="5%">ID</th><th width="5%">展开</th><th>分类名称</th><th>路由</th><th>状态</th><th>操作</th></tr>
+        <table class="table table-bordered mytable"><thead>
+            <tr pid="0"><th width="5%">ID</th><th width="5%">展开</th><th width="60%">分类名称</th><th width="10%">路由</th><th width="10%">状态</th><th>操作</th></tr>
             </thead>
             <tbody>
             <?php foreach($model as $v) : ?>
             <tr pid="<?=$v->pid?>" cid="<?=$v->id?>"><td><?=$v->id?></td>
-                <td><a href="javascript:void(0)" class="showPlus">aaa</a> </td>
+                <td><!--<a href="javascript:void(0)" class="showPlus"></a>--> <a class="glyphicon glyphicon-plus showPlus"></a> </td>
                 <td><?=$v->html.$v->name?></td>
                 <td><?=$v->rote?></td>
                 <td><?=ArrayHelper::getValue(\app\modules\category\models\Category::type(),$v->type)?></td>

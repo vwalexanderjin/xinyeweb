@@ -15,7 +15,7 @@ class BaseConfig extends BaseModel{
 
     protected function getConfigKeys() {
         //return $this->attributes();//反射比较耗时
-        return array_keys($this->attributes());
+        return array_keys($this->attributes);
     }
 
     protected function initAllInternal() {

@@ -36,6 +36,7 @@ class CategoryController extends BackendBaseController
     {
         $model = Category::find()->all();
         $newCate = \app\core\lib\Category::unlimitedForLevel($model,'_');
+        //print_r($newCate);
         return $this->render('index', [
             'model' => $newCate
         ]);
