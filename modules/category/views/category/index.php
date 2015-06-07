@@ -24,7 +24,7 @@ $jsStr = <<<JS
             $('tr[pid=' + index + ']').hide();
         })
     });*/
-    $(document).ready(function(){
+    /*$(document).ready(function(){
           $('tr[pid!=0]').hide();
           $('.showPlus').on("click",function(){
             if($(this).hasClass("glyphicon-minus")) {//已有表示已展开 所以点击关闭
@@ -37,6 +37,39 @@ $jsStr = <<<JS
                 $('tr[pid=' + index + ']').show();
             }
           })
+    });*/
+    //方法二：
+    $(document).ready(function(){
+        $('tr[level!=1]').hide();
+        $('.showPlus').click(function() {
+            //先取出当前的tr
+            var tr = $(this).parent().parent();
+            //取出当前行的level
+            var level = tr.attr("level");
+            if($(this).hasClass("glyphicon-plus")) { // +号
+                //向后找所有的tr 并循环
+                tr.nextAll().each(function(k,v){
+                    if (parseInt($(this).attr("level")) > level) { //大于level 为子类
+                        $(this).find(".showPlus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+                        $(this).show();
+                    } else { //否则不是
+                        return false; //直到相同就退出循环
+                    }
+                })
+                $(this).removeClass("glyphicon-plus").addClass("glyphicon-minus");
+            } else { // -号
+                //向后找所有的tr 并循环
+                tr.nextAll().each(function(k,v){
+                    if (parseInt($(this).attr("level")) > level) { //大于level 为子类
+                        $(this).hide();
+                    } else { //否则不是
+                        return false; //直到相同就退出循环
+                    }
+                })
+                $(this).removeClass("glyphicon-minus").addClass("glyphicon-plus");
+            }
+
+        })
     });
 JS;
 $this->registerJs($jsStr);
@@ -58,14 +91,13 @@ $this->registerCss($styleStr);
     <br/>
     <div class="grid-view">
         <table class="table table-bordered mytable"><thead>
-            <tr pid="0"><th width="5%">ID</th><th width="5%">展开</th><th width="60%">分类名称</th><th width="10%">路由</th><th width="10%">状态</th><th>操作</th></tr>
+            <tr level="1"><th width="5%">ID</th><th width="5%">展开</th><th width="60%">分类名称</th><th width="10%">状态</th><th>操作</th></tr>
             </thead>
             <tbody>
             <?php foreach($model as $v) : ?>
-            <tr pid="<?=$v->pid?>" cid="<?=$v->id?>"><td><?=$v->id?></td>
-                <td><!--<a href="javascript:void(0)" class="showPlus"></a>--> <a class="glyphicon glyphicon-plus showPlus"></a> </td>
+            <tr level="<?=$v->level?>"><td><?=$v->id?></td>
+                <td><a class="glyphicon glyphicon-plus showPlus"></a> </td>
                 <td><?=$v->html.$v->name?></td>
-                <td><?=$v->rote?></td>
                 <td><?=ArrayHelper::getValue(\app\modules\category\models\Category::type(),$v->type)?></td>
                 <td><a href="<?=Url::to(['update','id'=>$v->id])?>"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp;&nbsp;
                     <a href="<?=Url::to(['delete','id'=>$v->id])?>"><span class="glyphicon glyphicon-trash"></span></a>&nbsp;&nbsp;
