@@ -1,0 +1,170 @@
+@charset "utf-8";
+/*
+	project : Xinye
+	author : Jason
+	date : 31.3.2014
+	==================================================================================
+*/
+/* 
+	Extra small devices Phones (<768px) 
+	==================================================================================
+*/
+@media ( max-width: 320px) {
+/*
+	titles
+*/
+.c-title, .c-title-white { font-size: 2.4rem; }
+.c-title-2 { padding: 20px 0; }
+.c-title-2 h2 { font-size: 2.4rem; line-height: 36px; padding: 10px 0 0 0; }
+.c-title-2 p { color: #727272; font-size: 1.4rem; }
+.c-title-3 { font-size: 4rem; }
+.c-title-4 { padding: 140px 0 0 0; font-size: 3.6rem; }
+/*
+	da-slide
+*/
+.da-slider { max-width: 320px; height: 440px; }
+.da-slide h2 { font-size: 2.4rem; }
+.da-slide p { font-size: 1.4rem; }
+.da-slide .da-img { top: 220px; }
+.da-slide .da-img img { max-width: 310px; }
+.da-arrows { display: none; }
+/*
+	welcome-words
+*/
+.welcome-words { padding: 20px 0 40px 0; max-width: 320px; }
+.welcome-words p { font-size: 1.4rem; padding: 20px 10px; line-height: 24px; letter-spacing: 3px; }
+/*
+	what-we-do
+*/
+.what-we-do .list { max-width: 320px; padding: 30px 0 0 0; }
+.what-we-do .item { float: left; width: 50%; text-align: center; padding: 0 0 20px 0; }
+.what-we-do .item img { width: 100px; }
+.what-we-do .item p { font-size: 1.6rem; padding: 10px 0 0 0; letter-spacing: 3px; }
+/*
+	home-case
+*/
+.home-case .list { max-width: 310px; }
+.home-case .list li { float: none; width: 308px; height: auto; margin: 1px; position: relative; overflow: hidden; }
+.home-case .list img { max-width: 308px; }
+.home-case .showbox h3 { padding-top: 30px; }
+/*
+	start-pro
+*/
+.start-pro { height: 230px; }
+.start-pro h1 { padding: 14px 10px 0 10px; font-size: 2.4rem; }
+.start-pro h3 { font-size: 1.6rem; padding: 0 10px 10px 10px; }
+/*
+	footer
+*/
+.footer { height: auto; text-align: center; overflow: hidden; }
+.footer .links { padding: 38px 0 0 0; float: none; }
+.footer .links li { margin: 0; padding: 0 0 10px 0; line-height: 32px; float: none; }
+.footer .links a { font-size: 1.4rem; }
+.footer .copyright { font-size: 1.2rem; padding: 0; float: none; }
+/*
+	case-list
+*/
+.case-list li { height: auto; padding: 20px 0; }
+.case-list .inner { width: 310px; }
+.case-list h1 { font-size: 2.4rem; line-height: 36px; position: relative; left: auto; top: auto; width: 310px; text-align: center; }
+.case-list p { ont-size: 1.4rem; line-height: 24px; position: relative; left: auto; top: auto; width: 310px; text-align: left; padding: 20px 10px 0 10px; }
+.case-list figure { position: relative; width: 320px; text-align: center; right: auto; top: auto; }
+.case-list figure img { /* max-width: 632px; */ width: 300px; }
+.case-list .btn-visit { position: relative; top: auto; left: auto; margin: 0 auto; }
+.case-list .type2 h1 { left: auto; right: auto; text-align: center; }
+.case-list .type2 p { left: auto; right: auto; text-align: left; }
+.case-list .type2 .btn-visit { left: auto; right: auto; }
+.case-list .type2 figure { left: auto; }
+/*
+	service-list
+*/
+.service-list { width: 320px; margin: 30px 0; }
+.service-list li { float: none; width: 310px; margin: 10px 5px; }
+/*
+	blog-post
+*/
+.blog-post { width: 320px; }
+.blog-post figure { float: none; }
+.blog-post .main { float: none; width: 310px; margin: 0 auto; }
+.blog-post .main h5 { line-height: 36px; }
+.blog-post .date { text-align: center; }
+.blog-post .btn-blog { display: block; margin: 0 auto; }
+.share { display: none; }
+/*
+	about-info
+*/
+.about-info { width: 320px; margin: 30px 0; }
+.about-info figure { float: none; text-align: center; }
+.about-info figure img { width: 310px; }
+.about-info .content { float: none; width: 300px; margin: 0 auto; padding: 20px 0 0 0; }
+.about-info .content p { margin: 0 0 22px 0; }
+/*
+	about-goods
+*/
+.about-goods { width: 320px; margin: 30px 0 0 0; }
+.about-goods .item { float: none; width: 310px; margin: 10px auto; }
+.about-goods li { padding: 20px 30px 20px 40px; height: auto; background: url(../images/icon-28.png) no-repeat 20px 40px; }
+/*
+	about-team
+*/
+.about-team { width: 320px; margin: 0; }
+.about-team .item { float: none; width: 310px; margin: 0 auto; }
+.about-team .hobby { height: auto; }
+.about-team .arrow-top { top: 267px; }
+/*
+	contact-body
+*/
+.contact-body { width: 320px; }
+/*
+	contact-form
+*/
+.contact-form { float: none; width: 320px; }
+.contact-form p { padding: 0; text-align: center; margin: 0; }
+.contact-form .txt, .contact-form .txt2 { float: none; width: 300px; margin: 0 0 20px 0; }
+.contact-form .txt2 { width: 300px; height:100px; }
+.contact-form .btn-area { text-align: center; padding: 0; line-height:30px; }
+.contact-form .mailing { float: none; font-size:1.2rem; padding:0 5px; width:100%; }
+.contact-form .btn-send { float: none; width: 300px; margin:20px auto 0 auto; }
+/*
+	contact-ways
+*/
+.contact-ways { float: none; width: 320px; text-align:center; }
+.contact-ways h2 { font-size: 2rem; }
+.contact-ways .qr-code { position: relative; right: auto; top: auto; }
+}
+/* 
+	Extra small devices Phones (<768px) 
+	==================================================================================
+*/
+@media only screen and (max-width : 767px) {
+/*
+	header
+*/
+.header { height: 65px; background: #151515; }
+.header .logo { width: 60px; height: 45px; background: url(../images/menu-logo.png) no-repeat; background-size: 60px 45px; text-indent: -9999px; }
+/*
+	responsive menu
+*/
+#menu { display: none; }
+.slicknav_menu { display: block; }
+}
+/* 
+	Small devices (tablets, 768px and up) 
+	==================================================================================
+*/
+@media (min-width: 768px ) {
+}
+
+/* 
+	Medium devices (desktops, 992px and up) 
+	==================================================================================
+*/
+@media (min-width: 992px ) {
+}
+
+/* 
+	Large devices (large desktops, 1200px and up) 
+	==================================================================================
+*/
+@media (min-width: 1200px ) {
+}

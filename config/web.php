@@ -69,6 +69,13 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        //主题
+        'view' => [
+            'theme' =>  [
+                'pathMap' => ['@app/views' => '@app/themes/xinye2014'],
+                'baseUrl' => '@web/themes/xinye2014'
+            ],
+        ],
     ],
     'params' => $params,
 ];

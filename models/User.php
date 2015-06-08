@@ -2,102 +2,103 @@
 
 namespace app\models;
 
-class User extends \yii\base\Object implements \yii\web\IdentityInterface
+use Yii;
+use yii\web\IdentityInterface;
+
+/**
+ * This is the model class for table "{{%user}}".
+ *
+ * @property string $id
+ * @property string $username
+ * @property string $password
+ * @property string $qq_oauth
+ * @property string $wb_oauth
+ * @property string $accesstoken
+ * @property string $authkey
+ * @property integer $createtime
+ * @property string $nickname
+ * @property string $email
+ * @property string $face
+ */
+class User extends \yii\db\ActiveRecord implements IdentityInterface
 {
-    public $id;
-    public $username;
-    public $password;
-    public $authKey;
-    public $accessToken;
-
-    private static $users = [
-        '100' => [
-            'id' => '100',
-            'username' => 'admin',
-            'password' => 'admin',
-            'authKey' => 'test100key',
-            'accessToken' => '100-token',
-        ],
-        '101' => [
-            'id' => '101',
-            'username' => 'demo',
-            'password' => 'demo',
-            'authKey' => 'test101key',
-            'accessToken' => '101-token',
-        ],
-    ];
-
     /**
      * @inheritdoc
      */
-    public static function findIdentity($id)
+    public static function tableName()
     {
-        return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
+        return '{{%user}}';
     }
 
     /**
      * @inheritdoc
      */
-    public static function findIdentityByAccessToken($token, $type = null)
+    public function rules()
     {
-        foreach (self::$users as $user) {
-            if ($user['accessToken'] === $token) {
-                return new static($user);
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * Finds user by username
-     *
-     * @param  string      $username
-     * @return static|null
-     */
-    public static function findByUsername($username)
-    {
-        foreach (self::$users as $user) {
-            if (strcasecmp($user['username'], $username) === 0) {
-                return new static($user);
-            }
-        }
-
-        return null;
+        return [
+            [['accesstoken', 'authkey', 'createtime'], 'required'],
+            [['createtime'], 'integer'],
+            [['username'], 'string', 'max' => 20],
+            [['password', 'qq_oauth', 'wb_oauth'], 'string', 'max' => 32],
+            [['accesstoken', 'authkey'], 'string', 'max' => 200],
+            [['nickname'], 'string', 'max' => 12],
+            [['email', 'face'], 'string', 'max' => 100]
+        ];
     }
 
     /**
      * @inheritdoc
      */
-    public function getId()
+    public function attributeLabels()
     {
+        return [
+            'id' => Yii::t('app', 'ID'),
+            'username' => Yii::t('app', 'Username'),
+            'password' => Yii::t('app', 'Password'),
+            'qq_oauth' => Yii::t('app', 'Qq Oauth'),
+            'wb_oauth' => Yii::t('app', 'Wb Oauth'),
+            'accesstoken' => Yii::t('app', 'Accesstoken'),
+            'authkey' => Yii::t('app', 'Authkey'),
+            'createtime' => Yii::t('app', 'Createtime'),
+            'nickname' => Yii::t('app', 'Nickname'),
+            'email' => Yii::t('app', 'Email'),
+            'face' => Yii::t('app', 'Face'),
+        ];
+    }
+
+    /**
+     * 实现Identity方法
+     */
+
+    public static function findIdentity ($id) {
+        return static::findOne($id);
+    }
+
+    public static function findIdentityByAccessToken($token, $type = null) {
+
+    }
+
+    public function getId () {
         return $this->id;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function getAuthKey()
-    {
-        return $this->authKey;
+    public function getAuthKey () {
+        return $this->authkey;
+    }
+
+    public function validateAuthKey ($authKey) {
+        return $this->authkey = $authKey;
     }
 
     /**
-     * @inheritdoc
+     * 自定义方法
      */
-    public function validateAuthKey($authKey)
-    {
-        return $this->authKey === $authKey;
+
+    public function validatePassword ($password) {
+        return $this->password === md5($password);
     }
 
-    /**
-     * Validates password
-     *
-     * @param  string  $password password to validate
-     * @return boolean if password provided is valid for current user
-     */
-    public function validatePassword($password)
-    {
-        return $this->password === $password;
+    public static function findByUsername ($username) {
+        return static::findOne(['username'=>$username]);
     }
 }
