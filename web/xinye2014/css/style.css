@@ -53,7 +53,7 @@ body { font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif; font-size: 
 .slicknav_nav li { line-height: 36px; border-bottom: 1px solid #232323; border-top: 1px solid #0e0e0e; }
 .slicknav_nav li a { display: block; padding: 0 16px; height: 100%; color: #717171; }
 .slicknav_nav li a:hover {
-color:#; background: #000; text-decoration: none; transition: background .5s; -webkit-transition: background .5s; }
+    color:#; background: #000; text-decoration: none; transition: background .5s; -webkit-transition: background .5s; }
 /*
 	footer
 */
@@ -182,7 +182,7 @@ color:#; background: #000; text-decoration: none; transition: background .5s; -w
 */
 .contact-form { float: left; width: 700px; overflow: hidden; }
 .contact-form p { padding: 10px 0; overflow: hidden; position: relative; }
-.contact-form .txt, .contact-form .txt2 { float: left; border: 1px solid #dcdcdc; padding: 12px 10px; width: 330px; margin: 0 20px 0 0; font-size: 1.6rem; }
+.contact-form .txt, .contact-form .txt2 { float: left; border: 1px solid #dcdcdc; padding: 12px 10px; width: 330px; margin: 0 20px 5px 0; font-size: 1.6rem; }
 .contact-form .txt2 { width: 680px; }
 .contact-form .btn-area { padding: 0 20px 0 0; line-height: 40px; }
 .contact-form .mailing { float: left; color: #868686; display: block; }
@@ -309,3 +309,11 @@ color:#; background: #000; text-decoration: none; transition: background .5s; -w
 .signup-info h3 { font-size: 20px; margin: 0; line-height: 40px; color: #444444; }
 .signup-info p { color: #959595; }
 .signup-info figure { text-align: center; padding: 10px 0; }
+
+/*
+    error
+*/
+.error .txt, .error .txt2, .error .txt-1, .error .txt-2{
+    border-color:  #ffcc04;
+    background-color: #FFFCEB;
+}

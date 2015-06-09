@@ -14,6 +14,6 @@ use app\core\base\BaseController;
 class ErrorController extends BaseController{
 
     public function actionError() {
-        echo 11;
+
     }
 }

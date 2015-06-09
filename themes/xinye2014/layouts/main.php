@@ -36,7 +36,7 @@ $actionId = Yii::$app->controller->action->id;
             <li><a href="<?= Url::toRoute('/site/index') ?>"    <?php if ($controllerId == "site" && $actionId == "index") { ?> class="active" <?php } ?>  ><?= Yii::t('app', 'Home') ?></a></li>
             <li><a href="<?= Url::toRoute('/case/index') ?>"    <?php if ($controllerId == "case" && $actionId == "index") { ?> class="active" <?php } ?>  ><?= Yii::t('app', 'Case') ?></a></li>
             <li><a href="<?= Url::toRoute('/service/index') ?>" <?php if ($controllerId == "service" && $actionId == "index") { ?> class="active" <?php } ?> ><?= Yii::t('app', 'Service') ?></a></li>
-            <li><a href="<?= Url::toRoute('/article/index') ?>" <?php if ($controllerId == "article" && $actionId == "index") { ?> class="active" <?php } ?>><?= Yii::t('app', 'Blog') ?></a></li>
+            <li><a href="<?= Url::toRoute('/blog/index') ?>" <?php if ($controllerId == "blog" && ($actionId == "index" || $actionId == "view")) { ?> class="active" <?php } ?>><?= Yii::t('app', 'Blog') ?></a></li>
             <li><a href="<?= Url::toRoute('/site/about') ?>"    <?php if ($controllerId == "site" && $actionId == "about") { ?> class="active" <?php } ?>><?= Yii::t('app','About Us') ?></a></li>
             <li><a href="<?= Url::toRoute('/site/contact') ?>"  <?php if ($controllerId == "site" && $actionId == "contact") { ?> class="active" <?php } ?>><?= Yii::t('app','Contact Us') ?></a></li>
         </ul>

@@ -1,6 +1,6 @@
 <?php
 use yii\helpers\Html;
-$this->title = $article->title;
+$this->title = $info->title;
 ?>
 <div class="c-banner">
     <h1 class="c-title-4"><?= Yii::t('app', 'Blog') ?></h1>
@@ -8,15 +8,15 @@ $this->title = $article->title;
 <!--/c-banner-->
 <div class="blog-container">
     <div class="c-title-2">
-        <img src="<?= Yii::$app->request->baseUrl ?>/images/icon-14.png" alt="">
-        <h3><?= Html::encode($article->title) ?></h3>
+        <img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/images/icon-14.png" alt="">
+        <h3><?= Html::encode($info->title) ?></h3>
     </div>
     <!--/c-title-2-->
     <div class="blog-post">
         <article class="detail">
             <figure id="zoom-con">
-                <a href="<?= Yii::$app->request->baseUrl ?>/uploads/post-1-big.jpg" data-lightbox="image-1">
-                    <img src="<?= Yii::$app->request->baseUrl ?>/uploads/post-1.png" alt="">
+                <a href="<?= Yii::$app->request->baseUrl ?>/xinye2014/uploads/post-1-big.jpg" data-lightbox="image-1">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/uploads/post-1.png" alt="">
                     <div class="zoom">
                         <div class="mask"></div>
                         <div class="zoom-gla"></div>
@@ -26,7 +26,7 @@ $this->title = $article->title;
             <div class="main">
                 <div class="date">2014.3.17</div>
                 <div class="content">
-                    <?= $article->content ?>
+                    <?= $info->content ?>
                 </div>
                 <div class="share">
                     <!-- JiaThis Button BEGIN -->
@@ -42,7 +42,7 @@ $this->title = $article->title;
                     <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
                     <!-- JiaThis Button END -->
                 </div>
-                <a href="<?= \yii\helpers\Url::toRoute('/article/index') ?>" class="btn-blog">返回博客</a>
+                <a href="<?= \yii\helpers\Url::toRoute('/blog/index') ?>" class="btn-blog">返回博客</a>
             </div>
         </article>
     </div>

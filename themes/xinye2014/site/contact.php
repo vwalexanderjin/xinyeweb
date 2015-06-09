@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php else: ?>
             <?php $form = ActiveForm::begin(['id' => 'contact-form',
                 //'layout' => 'horizontal',
+                'errorCssClass' => 'error',
                 'fieldConfig' => [
                     'template' => "{input}",
 //            'horizontalCssClasses' => [
@@ -43,24 +44,24 @@ $this->params['breadcrumbs'][] = $this->title;
             ]); ?>
             <p>
                 <?= $form->field($model, 'name',['options'=>['class'=>'']])->textInput(['class'=>'txt','placeholder'=>'您的名字/称谓']) ?>
-                <?= $form->field($model, 'name',['options'=>['class'=>'']])->textInput(['class'=>'txt','placeholder'=>'您的名字/称谓']) ?>
+                <?= $form->field($model, 'email',['options'=>['class'=>'']])->textInput(['class'=>'txt','placeholder'=>'您的Email']) ?>
                 <!--<input type="text" class="txt" placeholder="您的名字/称谓">-->
                 <!--<input type="text" class="txt" placeholder="您的Email">-->
             </p>
             <p>
-                <?= $form->field($model, 'name',['options'=>['class'=>'']])->textInput(['class'=>'txt','placeholder'=>'您的名字/称谓']) ?>
-                <?= $form->field($model, 'name',['options'=>['class'=>'']])->textInput(['class'=>'txt','placeholder'=>'您的名字/称谓']) ?>
+                <?= $form->field($model, 'tel',['options'=>['class'=>'']])->textInput(['class'=>'txt','placeholder'=>'您的联系电话']) ?>
+                <?= $form->field($model, 'address',['options'=>['class'=>'']])->textInput(['class'=>'txt','placeholder'=>'您的公司名称/公司网址']) ?>
                 <!--<input type="text" class="txt" placeholder="您的联系电话">
                 <input type="text" class="txt" placeholder="您的公司名称/公司网址">-->
             </p>
             <p>
-                <?= $form->field($model, 'name',['options'=>['class'=>'']])->textarea(['class'=>'txt2','cols'=>'30','rows'=>'10','placeholder'=>'描述一下您的项目...']) ?>
+                <?= $form->field($model, 'body',['options'=>['class'=>'']])->textarea(['class'=>'txt2','cols'=>'30','rows'=>'10','placeholder'=>'描述一下您的项目...']) ?>
                 <!--<textarea name="" id="" cols="30" rows="10" class="txt2" placeholder="描述一下您的项目..."></textarea>-->
             </p>
             <p> </p>
             <p class="btn-area">
 				<span class="mailing">
-                    <?= $form->field($model, 'name')->checkbox(['label'=>'订阅我们的官方推送邮件，了解最新优惠及服务动态。'])?>
+                    <?= $form->field($model, 'checkMail')->checkbox(['label'=>'订阅我们的官方推送邮件，了解最新优惠及服务动态。'])?>
 				</span>
                 <?= Html::submitButton('发送', ['class' => 'btn-send','id'=>'btn-send', 'name' => 'contact-button']) ?>
                 <!--<input type="submit" class="btn-send" value="发送" id="btn-send" rel="#contact-overlay">-->
@@ -77,6 +78,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <h5>热线电话：</h5>
                 <p>( +86 ) 132-4637-9698</p>
                 <p>( +86 ) 135-7069-9857</p>
+                <p>( +86 ) 177-0756-1655</p>
             </li>
             <li>
                 <h5>电子邮件：</h5>

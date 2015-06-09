@@ -42,8 +42,8 @@ $config = [
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
-            //'errorAction' => 'error/error',
-            'errorAction' => 'site/error',
+            'errorAction' => 'error/error',
+            //'errorAction' => 'site/error',
         ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
@@ -57,8 +57,48 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => true,
+            //'useFileTransport' => true,//放在本地的邮件列表,测试邮件的时候可以开启这个
+            /*'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.gmail.com',
+                'username' => 'hotar.zhang@gmail.com',
+                'password' => 'hotermomo811125',
+                'port' => '465',
+                'encryption' => 'ssl',
+            ],*/
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.163.com',
+                'username' => 'xinyeweb@163.com',
+                'password' => 'xinyeweb2014',
+                'port' => '25',
+                'encryption' => 'tls',
+            ],
+            /*'messageConfig'=>[
+                'charset'=>'UTF-8',
+                'from'=>['xinyeweb@163.com'=>'admin']
+            ],*/
         ],
+        /*'session' => [
+              'class' => 'yii\web\DbSession',
+              // 'db' => 'mydb',
+               'sessionTable' => 'xy_session',
+         ],*/
+        //路由
+        /*'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'suffix' => '.html',
+            'rules' => [
+                'index' => 'site/index',
+                'case'  =>  'case/index',
+                'service'   =>  'service/index',
+                'blog'  =>  'article/index',
+                'about' => 'site/about',
+                'contact' => 'site/contact',
+                'login' => 'site/login',
+            ],
+        ],*/
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: hoter
- * Date: 15-6-8
- * Time: 下午11:43
- */
 
 namespace app\controllers;
 
