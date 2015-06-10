@@ -3,6 +3,7 @@
 namespace app\modules\post\controllers;
 
 use app\core\base\backend\BackendBaseController;
+use app\core\XY;
 use Yii;
 use app\modules\post\models\Post;
 use app\modules\post\models\search\PostSearch;
@@ -63,14 +64,13 @@ class PostController extends BackendBaseController
     {
         $model = new Post();
         $model->loadDefaultValues();
-        if ($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $this->uploadFile($model,'thumb','post');
 
             if ($model->save()) {
-                echo "111";
-            } else {
-                print_r($model->errors);
+                return $this->redirect(['view', 'id' => $model->id]);
             }
-            return $this->redirect(['view', 'id' => $model->id]);
+            return false;
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -88,7 +88,10 @@ class PostController extends BackendBaseController
     {
         $model = $this->findModel($id);
         $model->loadDefaultValues();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if (!$this->uploadFile($model,'thumb','post')) {
+                
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [

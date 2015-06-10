@@ -11,7 +11,7 @@ use yii\helpers\ArrayHelper;
 
 <div class="post-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <div class="col-md-9 col-sm-8">
 
@@ -37,9 +37,12 @@ use yii\helpers\ArrayHelper;
         <?= Html::activeFileInput($model, 'thumb',['class'=>'form-control']) ?>
 
         <?php
-            if (!$model->thumb) {
-                echo 1;
+            if (empty($model->thumb)) {
+                $thumb = Yii::$app->request->baseUrl . "/uploads/post/no_img.png";
+            } else {
+                $thumb = Yii::$app->request->baseUrl . '/uploads/post/'.$model->thumb;
             }
+            echo '<img src="'.$thumb.'" class="img-thumbnail" style="height:200px">';
         ?>
 
         <?= $form->field($model, 'from')->textInput(['maxlength' => true]) ?>
