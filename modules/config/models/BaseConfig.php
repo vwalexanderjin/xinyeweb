@@ -47,6 +47,8 @@ class BaseConfig extends BaseModel{
     }
 
     protected function saveOne($key, $val) {
+        echo $key . '<===================>' .$val . "<br>";
+        //Config::updateAll(['key'=>$key],['val'=>$val]);
         Config::updateAll(['key'=>$key],['val'=>$val]);
     }
 }

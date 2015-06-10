@@ -51,7 +51,7 @@ $jsStr = <<<JS
                 tr.nextAll().each(function(k,v){
                     if (parseInt($(this).attr("level")) > level) { //大于level 为子类
                         $(this).find(".showPlus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
-                        $(this).show();
+                        $(this).show("slow");
                     } else { //否则不是
                         return false; //直到相同就退出循环
                     }
@@ -61,7 +61,7 @@ $jsStr = <<<JS
                 //向后找所有的tr 并循环
                 tr.nextAll().each(function(k,v){
                     if (parseInt($(this).attr("level")) > level) { //大于level 为子类
-                        $(this).hide();
+                        $(this).hide("slow");
                     } else { //否则不是
                         return false; //直到相同就退出循环
                     }

@@ -56,6 +56,8 @@ class BasicConfig extends BaseConfig{
 
     public function initValue() {
         parent::initAllInternal();
+        echo "<pre>";
+        print_r($this->attributes);
     }
 
     public function save() {

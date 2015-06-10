@@ -21,7 +21,9 @@ use yii\helpers\ArrayHelper;
 
         <?= $form->field($model, 'info')->textarea(['rows' => 6]) ?>
 
-        <?= $form->field($model, 'content')->textarea(['rows' => 20]) ?>
+        <?/*= $form->field($model, 'content')->textarea(['rows' => 20]) */?>
+        <?= $form->field($model, 'content')->widget(\app\core\widgets\UEditor\UEditor::className()) ?>
+
 
     </div>
 
@@ -30,7 +32,15 @@ use yii\helpers\ArrayHelper;
 
         <?= $form->field($model, 'redirect_url')->textInput(['maxlength' => true]) ?>
 
-        <?= $form->field($model, 'thumb')->textInput(['maxlength' => true]) ?>
+        <?/*= $form->field($model, 'thumb')->textInput(['maxlength' => true]) */?>
+
+        <?= Html::activeFileInput($model, 'thumb',['class'=>'form-control']) ?>
+
+        <?php
+            if (!$model->thumb) {
+                echo 1;
+            }
+        ?>
 
         <?= $form->field($model, 'from')->textInput(['maxlength' => true]) ?>
 
@@ -50,11 +60,12 @@ use yii\helpers\ArrayHelper;
 
         <?= $form->field($model, 'type')->textInput(['maxlength' => true]) ?>
 
+        <div class="form-group">
+            <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        </div>
     </div>
 
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-    </div>
+
 
     <?php ActiveForm::end(); ?>
 

@@ -9,7 +9,9 @@ use yii\widgets\ActiveForm;
 ?>
 <div class="basic-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <div class="col-md-3 col-sm-4">
+
+        <?php $form = ActiveForm::begin(); ?>
 
         <?= $form->field($model, 'sys_site_name') ?>
         <?= $form->field($model, 'sys_site_description') ?>
@@ -25,10 +27,12 @@ use yii\widgets\ActiveForm;
         <?= $form->field($model, 'sys_stat') ?>
         <?= $form->field($model, 'sys_allow_register') ?>
         <?= $form->field($model, 'sys_site_email') ?>
-    
+
         <div class="form-group">
             <?= Html::submitButton(Yii::t('app', 'Submit'), ['class' => 'btn btn-primary']) ?>
         </div>
-    <?php ActiveForm::end(); ?>
+        <?php ActiveForm::end(); ?>
+
+    </div>
 
 </div><!-- basic-form -->

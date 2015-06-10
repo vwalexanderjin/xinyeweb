@@ -64,6 +64,7 @@ class PostController extends BackendBaseController
         $model = new Post();
         $model->loadDefaultValues();
         if ($model->load(Yii::$app->request->post())) {
+
             if ($model->save()) {
                 echo "111";
             } else {
