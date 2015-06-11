@@ -28,6 +28,9 @@ $config = [
         'comment' => [
             'class' => 'app\modules\comment\Module',
         ],
+        'test' => [
+            'class' => 'app\modules\test\Module',
+        ],
     ],
     'components' => [
         'request' => [
