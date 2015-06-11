@@ -9,7 +9,7 @@ body { margin: 0; padding: 0; overflow: hidden; min-width: 950px; }
 ::-webkit-scrollbar-corner:vertical{background-color:#535353}
 ::-webkit-scrollbar-resizer:vertical{background-color:#FF6E00}
 .header { width: 100%; height: 90px; display: inline-block; }
-.header .logo { width: 160px; height: 90px; background: url(../images/logo.gif) center center no-repeat; _background: url(../images/logo.gif) center center no-repeat; text-indent: -9999px; float: left; }
+.header .logo { width: 160px; height: 90px; text-indent: -9999px; float: left; }
 .header .nav { float: left; }
 .header .nav ul,
 .header .nav ul li { margin: 0; padding: 0; list-style: none; }

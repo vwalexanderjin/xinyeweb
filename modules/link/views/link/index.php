@@ -35,7 +35,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'ctime:datetime',
             // 'utime:datetime',
             // 'status',
-            // 'type',
+            [
+                'attribute' => 'type',
+                'value' => function($model){
+                    return  \yii\helpers\ArrayHelper::getValue(\app\modules\link\models\Link::type(),$model->type);
+                }
+            ],
             // 'cid',
             // 'order',
 

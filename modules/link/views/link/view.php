@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\helpers\ArrayHelper;
+use app\modules\link\models\Link;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\link\models\Link */
@@ -30,9 +32,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            [
+                'attribute' => 'id',
+                'header' => 'width:10%'
+            ],
             'title',
-            'logo',
+            [
+                'attribute' => 'logo',
+                'format' => 'raw',
+                'value' => (isset($model->logo) && ($model->logo!=null)) ? '<img src='.Yii::$app->request->baseUrl . '/uploads/link/'.$model->logo.' style="width:200px" />' : '<img src='.Yii::$app->request->baseUrl . '/uploads/post/no_img.png />',
+            ],
             'href',
             //'ctime:datetime',
             [
@@ -40,11 +49,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => date('Y-m-d', $model->ctime)
             ],
             //'utime:datetime',
-            'status',
-            'type',
+            [
+                'attribute' => 'status',
+                'value' => ArrayHelper::getValue(Link::status(), $model->status)
+            ],
+            [
+                'attribute' => 'type',
+                'value' => ArrayHelper::getValue(Link::type(), $model->type)
+            ],
             'cid',
             'order',
         ],
+        'template' => '<tr><th width="10%">{label}</th><td>{value}</td></tr>',
     ]) ?>
 
 </div>

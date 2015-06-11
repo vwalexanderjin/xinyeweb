@@ -66,18 +66,26 @@ $config = [
                 'port' => '465',
                 'encryption' => 'ssl',
             ],*/
-            'transport' => [
+            /*'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.163.com',
                 'username' => 'xinyeweb@163.com',
                 'password' => 'xinyeweb2014',
                 'port' => '25',
                 'encryption' => 'tls',
-            ],
-            /*'messageConfig'=>[
-                'charset'=>'UTF-8',
-                'from'=>['xinyeweb@163.com'=>'admin']
             ],*/
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.qq.com',
+                'username' => '232767044@qq.com',
+                'password' => 'xinyeweb2014',
+                'port' => '25',
+                'encryption' => 'tls',
+            ],
+            'messageConfig'=>[
+                'charset'=>'UTF-8',
+                'from'=>['232767044@qq.com'=>'admin']
+            ],
         ],
         /*'session' => [
               'class' => 'yii\web\DbSession',
@@ -111,9 +119,10 @@ $config = [
         'db' => require(__DIR__ . '/db.php'),
         //主题
         'view' => [
+            //'class' => 'yii\web\View',
             'theme' =>  [
                 'pathMap' => ['@app/views' => '@app/themes/xinye2014'],
-                'baseUrl' => '@web/themes/xinye2014'
+//                'baseUrl' => '@web/themes/xinye2014'
             ],
         ],
     ],

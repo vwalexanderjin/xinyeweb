@@ -34,7 +34,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'title_second',
             'redirect_url:url',
-            'thumb',
+            [
+                'format'=> 'raw',
+                'attribute' => 'thumb',
+                'value' => (isset($model->thumb) && ($model->thumb!=null)) ? '<img src='.Yii::$app->request->baseUrl . '/uploads/post/'.$model->thumb.' style="height:200px" />' : '<img src='.Yii::$app->request->baseUrl . '/uploads/post/no_img.png />',
+            ],
             'from',
             'seo_title',
             'seo_keywords',
@@ -50,7 +54,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => \yii\helpers\ArrayHelper::getValue($model->status(), $model->status)
             ],
             'info',
-            'content:ntext',
+            //'content:ntext',
+            [
+                'attribute' => 'content',
+                'format' => 'raw'
+            ],
             //'ctime:datetime',
             [
                 'attribute'=> 'ctime',

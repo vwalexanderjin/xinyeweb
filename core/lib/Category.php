@@ -14,7 +14,7 @@ class Category {
         foreach ($cate as $v) {
             if ($v['pid'] == $pid) {
                 $v['level'] = $level + 1;
-                $v['html'] = str_repeat($html, ($level*9));
+                $v['html'] = str_repeat($html, ($level*6)).$v['name'];
                 $arr[] = $v;
                 $arr = array_merge($arr, self::unlimitedForLevel($cate, $html, $v['id'], $level+1));
             }

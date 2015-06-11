@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: hoter
- * Date: 15-5-19
- * Time: 下午9:57
- */
 namespace app\core\base\backend;
 use Yii;
 use app\core\base\BaseController;
@@ -29,16 +23,16 @@ class BackendBaseController extends BaseController{
     }
 
     //以type 作爲圖片目錄 例如 link/post/ad...
-    public function uploadFile($model, $attribute, $type="public",$oldImg=null, $width=null, $height=null){
+    public function uploadFile($model, $attribute, $type="public",$oldImgName=null, $width=null, $height=null){
         $upload = UploadedFile::getInstance($model, $attribute);
 
         if ($upload) {
             $dir = $this->fileExists(Yii::getAlias('./uploads/').$type.'/');//得到目錄
             $preRand = 'img_' .time().mt_rand(0, 9999);
             $imgName = $preRand . '.' .$upload->extension;
-            $filePath = $dir . '/' .$imgName;
+            $filePath = $dir .$imgName;
             if ($upload->saveAs($filePath)) {//upload ok
-                if (isset($oldImg) && $oldImg!=null) @unlink($oldImg);
+                if (isset($oldImgName) && $oldImgName!=null) @unlink($dir.$oldImgName);
                 $model->$attribute = $imgName;
                 if (isset($width) && isset($height)) {
                     Image::thumbnail($filePath, $width, $height)->save($filePath);

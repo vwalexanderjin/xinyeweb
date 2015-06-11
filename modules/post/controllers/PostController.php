@@ -66,7 +66,6 @@ class PostController extends BackendBaseController
         $model->loadDefaultValues();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $this->uploadFile($model,'thumb','post');
-
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
@@ -88,11 +87,14 @@ class PostController extends BackendBaseController
     {
         $model = $this->findModel($id);
         $model->loadDefaultValues();
+        $oldImgName = $model->thumb;
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if (!$this->uploadFile($model,'thumb','post')) {
-                
+            if (!$this->uploadFile($model,'thumb','post', $oldImgName)) {
+                $model->thumb = $oldImgName;
             }
-            return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->save()){
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         } else {
             return $this->render('update', [
                 'model' => $model,

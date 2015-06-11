@@ -28,14 +28,13 @@ use yii\helpers\ArrayHelper;
     </div>
 
     <div class="col-md-3 col-sm-4">
-        <?= $form->field($model, 'cid')->dropDownList(ArrayHelper::map(\app\modules\category\models\Category::getCateList(),'id','name')) ?>
+        <?= $form->field($model, 'cid')->dropDownList(ArrayHelper::map(\app\modules\category\models\Category::getCateList(),'id','html')) ?>
 
         <?= $form->field($model, 'redirect_url')->textInput(['maxlength' => true]) ?>
 
-        <?/*= $form->field($model, 'thumb')->textInput(['maxlength' => true]) */?>
+        <?= $form->field($model, 'thumb')->fileInput(['class'=>'form-control']) ?>
 
-        <?= Html::activeFileInput($model, 'thumb',['class'=>'form-control']) ?>
-
+        <br>
         <?php
             if (empty($model->thumb)) {
                 $thumb = Yii::$app->request->baseUrl . "/uploads/post/no_img.png";
@@ -44,6 +43,7 @@ use yii\helpers\ArrayHelper;
             }
             echo '<img src="'.$thumb.'" class="img-thumbnail" style="height:200px">';
         ?>
+        <br>
 
         <?= $form->field($model, 'from')->textInput(['maxlength' => true]) ?>
 

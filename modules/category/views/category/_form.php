@@ -15,7 +15,7 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'pid')->dropDownList(ArrayHelper::map(\app\modules\category\models\Category::getCateList(),'id','name')) ?>
+    <?= $form->field($model, 'pid')->dropDownList(ArrayHelper::map(\app\modules\category\models\Category::getCateList(),'id','html')) ?>
 
     <?= $form->field($model, 'rote')->textInput(['maxlength' => true]) ?>
 

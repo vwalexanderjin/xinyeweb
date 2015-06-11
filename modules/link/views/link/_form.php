@@ -16,8 +16,18 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'logo')->textInput(['maxlength' => true]) ?>
-    <?//= $form->field($model, 'logo')->fileInput() ?>
+    <?= $form->field($model, 'logo')->fileInput(['class'=>'form-control']) ?>
+
+    <br>
+    <?php
+    if (empty($model->logo)) {
+        $thumb = Yii::$app->request->baseUrl . "/uploads/post/no_img.png";
+    } else {
+        $thumb = Yii::$app->request->baseUrl . '/uploads/link/'.$model->logo;
+    }
+    echo '<img src="'.$thumb.'" class="img-thumbnail" style="width:200px">';
+    ?>
+    <br>
 
     <?= $form->field($model, 'href')->textInput(['maxlength' => true]) ?>
 
