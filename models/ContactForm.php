@@ -14,7 +14,7 @@ class ContactForm extends Model
     public $email;
     public $tel;
     public $address;
-    public $checkMail = true ;
+    public $checkMail = true;
     public $body;
 //    public $verifyCode;
 
@@ -45,7 +45,7 @@ class ContactForm extends Model
 
     /**
      * Sends an email to the specified email address using the information collected by this model.
-     * @param  string  $email the target email address
+     * @param  string $email the target email address
      * @return boolean whether the model passes validation
      */
     public function contact($email)
@@ -53,10 +53,10 @@ class ContactForm extends Model
         if ($this->validate()) {
             Yii::$app->mailer->compose()
                 ->setTo($email)
-                ->setFrom(["232767044@qq.com"])
+                ->setFrom(["232767044@qq.com" => "zhanghongtao"])
                 ->setSubject($this->name . "xinyeweb Contact")
-                ->setTextBody($this->name.'<br>'.$this->email.'<br>'.$this->tel.'<br>'.$this->address.'<br>'.$this->body)
-                ->setHtmlBody($this->name.'<br>'.$this->email.'<br>'.$this->tel.'<br>'.$this->address.'<br>'.$this->body)
+                ->setTextBody($this->name . '<br>' . $this->email . '<br>' . $this->tel . '<br>' . $this->address . '<br>' . $this->body)
+                ->setHtmlBody($this->name . '<br>' . $this->email . '<br>' . $this->tel . '<br>' . $this->address . '<br>' . $this->body)
                 ->send();
             return true;
         } else {

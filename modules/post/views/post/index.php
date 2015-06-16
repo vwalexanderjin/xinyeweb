@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="post-index">
 
-   <!-- <h1><?/*= Html::encode($this->title) */?></h1>-->
+    <!-- <h1><? /*= Html::encode($this->title) */ ?></h1>-->
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
+        'filterModel' => $searchModel,
         'layout' => '{items} {pager}',
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'title_second',
             'redirect_url:url',
-            'thumb',
+            //'thumb',
             // 'from',
             // 'seo_title',
             // 'seo_keywords',
@@ -46,10 +46,14 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'ctime:datetime',
             // 'utime:datetime',
             // 'type',
-             [
-                 'attribute' => 'cid',
-                 'value' => 'category.name',
-             ],
+            [
+                'attribute' => 'cid',
+                'value' => 'category.name',
+                //'filter' => \yii\helpers\ArrayHelper::map(\app\modules\category\models\Category::getCateList(),'id','html'),
+                'filter' => \app\modules\category\models\Category::getCate(),
+                //'filter' => Html::dropDownList('cid',null, \app\modules\category\models\Category::getCate()),
+                'headerOptions' => ['width' => 170]
+            ],
             // 'uid',
 
             ['class' => 'yii\grid\ActionColumn'],

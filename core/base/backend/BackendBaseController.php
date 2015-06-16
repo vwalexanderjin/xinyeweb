@@ -45,8 +45,6 @@ class BackendBaseController extends BaseController{
         return false;
     }
 
-
-
     protected function fileExists($dir) {
         if (!file_exists($dir)) {
             mkdir($dir,777);

@@ -1,6 +1,6 @@
 <?php
 use yii\helpers\Html;
-$this->title = $info->title;
+$this->title = $info['title'];
 ?>
 <div class="c-banner">
     <h1 class="c-title-4"><?= Yii::t('app', 'Blog') ?></h1>
@@ -9,7 +9,7 @@ $this->title = $info->title;
 <div class="blog-container">
     <div class="c-title-2">
         <img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/images/icon-14.png" alt="">
-        <h3><?= Html::encode($info->title) ?></h3>
+        <h3><?= Html::encode($info['title']) ?></h3>
     </div>
     <!--/c-title-2-->
     <div class="blog-post">
@@ -26,7 +26,7 @@ $this->title = $info->title;
             <div class="main">
                 <div class="date">2014.3.17</div>
                 <div class="content">
-                    <?= $info->content ?>
+                    <?= $info['content'] ?>
                 </div>
                 <div class="share">
                     <!-- JiaThis Button BEGIN -->

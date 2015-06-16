@@ -10,6 +10,9 @@ $config = [
         'admin' => [
             'class' => 'app\modules\admin\Module',
         ],
+        'ad' => [
+            'class' => 'app\modules\ad\Module',
+        ],
         'rbac' => [
             'class' => 'app\modules\rbac\Module',
         ],
@@ -27,6 +30,12 @@ $config = [
         ],
         'comment' => [
             'class' => 'app\modules\comment\Module',
+        ],
+        'file' => [
+            'class' => 'app\modules\file\Module',
+        ],
+        'page' => [
+            'class' => 'app\modules\page\Module',
         ],
         'test' => [
             'class' => 'app\modules\test\Module',

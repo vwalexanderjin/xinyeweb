@@ -3,6 +3,7 @@
 namespace app\modules\category\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "{{%category}}".
@@ -65,6 +66,15 @@ class Category extends \app\core\base\BaseActiveRecord
             $cateArr = Category::find()->all();
         }
         return \app\core\lib\Category::unlimitedForLevel($cateArr);
+    }
+
+    public static function  getCate($module = null){
+        if ($module != null) {
+            $cateArr = Category::find()->andWhere(['module'=>$module])->all();
+        } else {
+            $cateArr = Category::find()->all();
+        }
+        return ArrayHelper::map(\app\core\lib\Category::unlimitedForLevel($cateArr), 'id', 'html');
     }
 
     public static function type() {

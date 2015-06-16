@@ -1,20 +1,18 @@
 <?php
 
-namespace app\modules\category\controllers;
+namespace app\modules\page\controllers;
 
-use app\core\base\backend\BackendBaseController;
-use app\core\lib\Common;
 use Yii;
-use app\modules\category\models\Category;
-use app\modules\category\models\search\CategorySearch;
-use yii\web\Controller;
+use app\modules\page\models\Page;
+use app\modules\page\models\search\Page as PageSearch;
+use app\core\base\backend\BackendBaseController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CategoryController implements the CRUD actions for Category model.
+ * PageController implements the CRUD actions for Page model.
  */
-class CategoryController extends BackendBaseController
+class PageController extends BackendBaseController
 {
     public function behaviors()
     {
@@ -29,21 +27,23 @@ class CategoryController extends BackendBaseController
     }
 
     /**
-     * Lists all Category models.
+     * Lists all Page models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $model = Category::find()->asArray()->all();
-        $newCate = \app\core\lib\Category::unlimitedForLevel($model,'_');
+        $searchModel = new PageSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
         return $this->render('index', [
-            'model' => $newCate
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
     }
 
     /**
-     * Displays a single Category model.
-     * @param integer $id
+     * Displays a single Page model.
+     * @param string $id
      * @return mixed
      */
     public function actionView($id)
@@ -54,18 +54,16 @@ class CategoryController extends BackendBaseController
     }
 
     /**
-     * Creates a new Category model.
+     * Creates a new Page model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate($pid=0)
+    public function actionCreate()
     {
-        $pid = isset($pid) ? $pid : 0;
-        $model = new Category();
-        $model->loadDefaultValues();
-        $model->pid = $pid;
+        $model = new Page();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -74,9 +72,9 @@ class CategoryController extends BackendBaseController
     }
 
     /**
-     * Updates an existing Category model.
+     * Updates an existing Page model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      */
     public function actionUpdate($id)
@@ -84,20 +82,18 @@ class CategoryController extends BackendBaseController
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            //return $this->redirect(['view', 'id' => $model->id]);
-            return $this->redirect(['index']);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
-                'pid'   => $model->pid,
             ]);
         }
     }
 
     /**
-     * Deletes an existing Category model.
+     * Deletes an existing Page model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      */
     public function actionDelete($id)
@@ -108,15 +104,15 @@ class CategoryController extends BackendBaseController
     }
 
     /**
-     * Finds the Category model based on its primary key value.
+     * Finds the Page model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Category the loaded model
+     * @param string $id
+     * @return Page the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Category::findOne($id)) !== null) {
+        if (($model = Page::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

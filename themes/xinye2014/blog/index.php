@@ -15,12 +15,12 @@ $this->title = Yii::t('app','Blog');
     <div class="blog-post">
         <?php foreach($blogList as $v): ?>
             <article>
-                <figure><a href="<?= \yii\helpers\Url::toRoute(['blog/view','id'=>$v->id]) ?>"><img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/images/blog-no-img.png" alt=""></a></figure>
+                <figure><a href="<?= \yii\helpers\Url::toRoute(['blog/view','id'=>$v['id']]) ?>"><img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/images/blog-no-img.png" alt=""></a></figure>
                 <div class="main">
-                    <h5><a href="#"><?= $v->title ?></a> <small>[ 分类名称 ]</small></h5>
-                    <div class="date"><?= date('Y-m-d', $v->utime) ?></div>
-                    <div class="content"><?= $v->info  ?></div>
-                    <a href="<?= \yii\helpers\Url::toRoute(['blog/view','id'=>$v->id]) ?>" class="btn-blog"><?= Yii::t('app', 'readView') ?></a>
+                    <h5><a href="#"><?= $v['title'] ?></a> <small>[ 分类名称 ]</small></h5>
+                    <div class="date"><?= date('Y-m-d', $v['utime']) ?></div>
+                    <div class="content"><?= $v['info']  ?></div>
+                    <a href="<?= \yii\helpers\Url::toRoute(['blog/view','id'=>$v['id']]) ?>" class="btn-blog"><?= Yii::t('app', 'readView') ?></a>
                 </div>
             </article>
         <?php endforeach; ?>

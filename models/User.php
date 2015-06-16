@@ -11,10 +11,11 @@ use yii\web\IdentityInterface;
  * @property string $id
  * @property string $username
  * @property string $password
+ * @property string $password_hash
  * @property string $qq_oauth
  * @property string $wb_oauth
  * @property string $accesstoken
- * @property string $authkey
+ * @property string $auth_key
  * @property integer $createtime
  * @property string $nickname
  * @property string $email
@@ -36,10 +37,10 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['accesstoken', 'authkey', 'createtime'], 'required'],
+            [['accesstoken', 'auth_key', 'createtime'], 'required'],
             [['createtime'], 'integer'],
             [['username'], 'string', 'max' => 20],
-            [['password', 'qq_oauth', 'wb_oauth'], 'string', 'max' => 32],
+            [['password','password_hash', 'qq_oauth', 'wb_oauth'], 'string', 'max' => 32],
             [['accesstoken', 'authkey'], 'string', 'max' => 200],
             [['nickname'], 'string', 'max' => 12],
             [['email', 'face'], 'string', 'max' => 100]
@@ -55,10 +56,11 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             'id' => Yii::t('app', 'ID'),
             'username' => Yii::t('app', 'Username'),
             'password' => Yii::t('app', 'Password'),
+            'password_hash' => Yii::t('app', 'Password Hash'),
             'qq_oauth' => Yii::t('app', 'Qq Oauth'),
             'wb_oauth' => Yii::t('app', 'Wb Oauth'),
             'accesstoken' => Yii::t('app', 'Accesstoken'),
-            'authkey' => Yii::t('app', 'Authkey'),
+            'auth_key' => Yii::t('app', 'Auth Key'),
             'createtime' => Yii::t('app', 'Createtime'),
             'nickname' => Yii::t('app', 'Nickname'),
             'email' => Yii::t('app', 'Email'),
@@ -83,11 +85,11 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     }
 
     public function getAuthKey () {
-        return $this->authkey;
+        return $this->auth_key;
     }
 
     public function validateAuthKey ($authKey) {
-        return $this->authkey = $authKey;
+        return $this->auth_key = $authKey;
     }
 
     /**
@@ -96,6 +98,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
 
     public function validatePassword ($password) {
         return $this->password === md5($password);
+        //方法二
+        //return Yii::$app->getSecurity()->validatePassword($password, $this->password_hash);
     }
 
     public static function findByUsername ($username) {

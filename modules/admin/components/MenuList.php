@@ -68,8 +68,12 @@ class MenuList
                 ],
                 [
                     'name' => '单页管理',
-                    'url' => 'admin/category/index'
-                ]
+                    'url' => 'page/page/index'
+                ],
+                [
+                'name' => '幻灯片',
+                'url' => 'ad/ad/index'
+            ]
             ],
         ],
         '权限' => [

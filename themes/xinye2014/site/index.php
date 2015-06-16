@@ -1,6 +1,6 @@
 <?php
 /* @var $this yii\web\View */
-$this->title = Yii::t('app','xinye2014');
+$this->title = Yii::t('app','xinyeweb');
 ?>
 <div class="da-slider" id="da-slider">
     <div class="da-slide da-slide-current">

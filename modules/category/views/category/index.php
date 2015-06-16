@@ -95,13 +95,13 @@ $this->registerCss($styleStr);
             </thead>
             <tbody>
             <?php foreach($model as $v) : ?>
-            <tr level="<?=$v->level?>"><td><?=$v->id?></td>
+            <tr level="<?=$v['level']?>"><td><?=$v['id']?></td>
                 <td><a class="glyphicon glyphicon-plus showPlus"></a> </td>
-                <td><?=$v->html.$v->name?></td>
-                <td><?=ArrayHelper::getValue(\app\modules\category\models\Category::type(),$v->type)?></td>
-                <td><a href="<?=Url::to(['update','id'=>$v->id])?>"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp;&nbsp;
-                    <a href="<?=Url::to(['delete','id'=>$v->id])?>"><span class="glyphicon glyphicon-trash"></span></a>&nbsp;&nbsp;
-                    <a href="<?=Url::to(['create','pid'=>$v->id])?>"><span class="glyphicon glyphicon-plus"></span></a>
+                <td><?=$v['html'].$v['name']?></td>
+                <td><?=ArrayHelper::getValue(\app\modules\category\models\Category::type(),$v['type'])?></td>
+                <td><a href="<?=Url::to(['update','id'=>$v['id']])?>"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp;&nbsp;
+                    <a href="<?=Url::to(['delete','id'=>$v['id']])?>"><span class="glyphicon glyphicon-trash"></span></a>&nbsp;&nbsp;
+                    <a href="<?=Url::to(['create','pid'=>$v['id']])?>"><span class="glyphicon glyphicon-plus"></span></a>
                 </td>
             </tr>
             <?php endforeach; ?>

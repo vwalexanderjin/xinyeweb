@@ -1,20 +1,18 @@
 <?php
 
-namespace app\modules\category\controllers;
+namespace app\modules\ad\controllers;
 
-use app\core\base\backend\BackendBaseController;
-use app\core\lib\Common;
 use Yii;
-use app\modules\category\models\Category;
-use app\modules\category\models\search\CategorySearch;
-use yii\web\Controller;
+use app\modules\ad\models\Ad;
+use app\modules\ad\models\search\AdSearch;
+use app\core\base\backend\BackendBaseController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CategoryController implements the CRUD actions for Category model.
+ * AdController implements the CRUD actions for Ad model.
  */
-class CategoryController extends BackendBaseController
+class AdController extends BackendBaseController
 {
     public function behaviors()
     {
@@ -29,21 +27,23 @@ class CategoryController extends BackendBaseController
     }
 
     /**
-     * Lists all Category models.
+     * Lists all Ad models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $model = Category::find()->asArray()->all();
-        $newCate = \app\core\lib\Category::unlimitedForLevel($model,'_');
+        $searchModel = new AdSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
         return $this->render('index', [
-            'model' => $newCate
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
     }
 
     /**
-     * Displays a single Category model.
-     * @param integer $id
+     * Displays a single Ad model.
+     * @param string $id
      * @return mixed
      */
     public function actionView($id)
@@ -54,18 +54,19 @@ class CategoryController extends BackendBaseController
     }
 
     /**
-     * Creates a new Category model.
+     * Creates a new Ad model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate($pid=0)
+    public function actionCreate()
     {
-        $pid = isset($pid) ? $pid : 0;
-        $model = new Category();
+        $model = new Ad();
         $model->loadDefaultValues();
-        $model->pid = $pid;
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $this->uploadFile($model,'img','ad', null);
+           if ($model->save()) {
+               return $this->redirect(['view', 'id' => $model->id]);
+           }
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -74,30 +75,34 @@ class CategoryController extends BackendBaseController
     }
 
     /**
-     * Updates an existing Category model.
+     * Updates an existing Ad model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            //return $this->redirect(['view', 'id' => $model->id]);
-            return $this->redirect(['index']);
+        $model->loadDefaultValues();
+        $oldImg = $model->img;
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ( !$this->uploadFile($model,'img','ad',$oldImg)) {
+                $model->logo = $oldImg;
+            }
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         } else {
             return $this->render('update', [
                 'model' => $model,
-                'pid'   => $model->pid,
             ]);
         }
     }
 
     /**
-     * Deletes an existing Category model.
+     * Deletes an existing Ad model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      */
     public function actionDelete($id)
@@ -108,15 +113,15 @@ class CategoryController extends BackendBaseController
     }
 
     /**
-     * Finds the Category model based on its primary key value.
+     * Finds the Ad model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Category the loaded model
+     * @param string $id
+     * @return Ad the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Category::findOne($id)) !== null) {
+        if (($model = Ad::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
