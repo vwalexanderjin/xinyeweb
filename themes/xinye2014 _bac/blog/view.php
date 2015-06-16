@@ -8,15 +8,15 @@ $this->title = $info['title'];
 <!--/c-banner-->
 <div class="blog-container">
     <div class="c-title-2">
-        <img src="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/images/icon-14.png" alt="">
+        <img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/images/icon-14.png" alt="">
         <h3><?= Html::encode($info['title']) ?></h3>
     </div>
     <!--/c-title-2-->
     <div class="blog-post">
         <article class="detail">
             <figure id="zoom-con">
-                <a href="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/uploads/post-1-big.jpg" data-lightbox="image-1">
-                    <img src="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/uploads/post-1.png" alt="">
+                <a href="<?= Yii::$app->request->baseUrl ?>/xinye2014/uploads/post-1-big.jpg" data-lightbox="image-1">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/uploads/post-1.png" alt="">
                     <div class="zoom">
                         <div class="mask"></div>
                         <div class="zoom-gla"></div>

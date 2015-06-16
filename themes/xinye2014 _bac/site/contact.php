@@ -8,17 +8,15 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model app\models\ContactForm */
 
-$this->title = Yii::t('app','Contact Us'). ' - ' . Yii::t('app','Xinyeweb');
-$this->registerMetaTag(['name'=>'description','content'=>Yii::$app->params['seo_description']]);
-$this->registerMetaTag(['name'=>'keywords','content'=>Yii::$app->params['seo_keywords']]);
+$this->title = Yii::t('app','Contact Us');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="c-banner">
-    <h1 class="c-title-4"><?= Yii::t('app','Contact Us') ?></h1>
+    <h1 class="c-title-4"><?= Html::encode($this->title) ?></h1>
 </div>
 <!--/c-banner-->
 <div class="c-title-2">
-    <img src="<?=Yii::$app->request->baseUrl?>/web/xinye2014/images/icon-14.png" alt="">
+    <img src="<?=Yii::$app->request->baseUrl?>/xinye2014/images/icon-14.png" alt="">
     <h2>保持联系</h2>
 </div>
 <!--/c-title-2-->
@@ -95,7 +93,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <p>2478619266</p>
             </li>
         </ul>
-        <figure class="qr-code"><img src="<?=Yii::$app->request->baseUrl?>/web/xinye2014/images/qr-code.png" alt=""></figure>
+        <figure class="qr-code"><img src="<?=Yii::$app->request->baseUrl?>/xinye2014/images/qr-code.png" alt=""></figure>
     </div>
     <!--/contact-ways-->
 </div>

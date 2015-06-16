@@ -2,21 +2,19 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-$this->title = Yii::t('app', 'About Us'). ' - ' . Yii::t('app','Xinyeweb');
-$this->registerMetaTag(['name'=>'description','content'=>Yii::$app->params['seo_description']]);
-$this->registerMetaTag(['name'=>'keywords','content'=>Yii::$app->params['seo_keywords']]);
+$this->title = Yii::t('app', 'About Us');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="c-banner">
-    <h1 class="c-title-4"><?= Yii::t('app', 'About Us')?></h1>
+    <h1 class="c-title-4"><?= Html::encode($this->title) ?></h1>
 </div>
 <!--/c-banner-->
 <div class="c-title-2">
-    <img src="<?=Yii::$app->request->baseUrl?>/web/xinye2014/images/icon-14.png" alt="">
+    <img src="<?=Yii::$app->request->baseUrl?>/xinye2014/images/icon-14.png" alt="">
 </div>
 <!--/c-title-2-->
 <div class="about-info">
-    <figure><img src="<?=Yii::$app->request->baseUrl?>/web/xinye2014/images/pic-5.png" alt=""></figure>
+    <figure><img src="<?=Yii::$app->request->baseUrl?>/xinye2014/images/pic-5.png" alt=""></figure>
     <div class="content">
         <p>鑫烨是总部位于中国珠海的一家现代网络产品和设计公司。凭借多年的行业经验，组成了被客户认可，并且对互联网有着强烈激情的团队。我们所有的项目都按照行业标准来完成。</p>
         <p>我们的经验和工作方法确保我们的网站设计，开发和优化超越客户的期望值。在国内，我们所有的工作都由我们自己来完成，绝不外包。这意味着您可以始终与我们保持联络，并且为您的项目提供有效的维护与更新。</p>
@@ -27,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 <!--/about-info-->
 <div class="c-title-2">
-    <img src="<?=Yii::$app->request->baseUrl?>/web/xinye2014/images/icon-14.png" alt="">
+    <img src="<?=Yii::$app->request->baseUrl?>/xinye2014/images/icon-14.png" alt="">
     <h2>为何选择我们？</h2>
     <p>是什么让我们从竞争中脱颖而出</p>
 </div>

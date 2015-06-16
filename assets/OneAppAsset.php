@@ -18,19 +18,19 @@ class OneAppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'xinye2014/css/reset.css',
-        'xinye2014/css/bootstrap.min.css',
-        'xinye2014/css/style.css',
-        'xinye2014/css/da-slider.css',
-        'xinye2014/css/responsive.css'
+        'web/xinye2014/css/reset.css',
+        'web/xinye2014/css/bootstrap.min.css',
+        'web/xinye2014/css/style.css',
+        'web/xinye2014/css/da-slider.css',
+        'web/xinye2014/css/responsive.css'
     ];
     public $js = [
-        'xinye2014/js/bootstrap.min.js',
-        'xinye2014/js/modernizr.custom.28468.js',
-        'xinye2014/js/jquery.cslider.js',
-        'xinye2014/js/jquery.slicknav.min.js',
-        'xinye2014/js/common.js',
-        'xinye2014/js/jquery.cookie.js',
+        'web/xinye2014/js/bootstrap.min.js',
+        'web/xinye2014/js/modernizr.custom.28468.js',
+        'web/xinye2014/js/jquery.cslider.js',
+        'web/xinye2014/js/jquery.slicknav.min.js',
+        'web/xinye2014/js/common.js',
+        'web/xinye2014/js/jquery.cookie.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

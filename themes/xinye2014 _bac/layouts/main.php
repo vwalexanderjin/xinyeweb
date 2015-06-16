@@ -21,11 +21,11 @@ $actionId = Yii::$app->controller->action->id;
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
-        <?php $this->head() ?>
         <!--[if IE]>
         <script src="<?= Yii::$app->request->baseUrl ?>/js/html5shiv.js"></script>
         <script src="<?= Yii::$app->request->baseUrl ?>/js/respond.min.js"></script>
         <![endif]-->
+        <?php $this->head() ?>
     </head>
     <body>
 
@@ -57,13 +57,12 @@ $actionId = Yii::$app->controller->action->id;
             }
         </script>
         <ul class="links">
-            <!--<li><a href="javascript:;" onClick="changeLanguage('en')" ><?/*= Yii::t('app', 'English') */?></a></li>
-            <li><a href="javascript:;" onClick="changeLanguage('zh-CN')" ><?/*= Yii::t('app', 'Chinese') */?></a></li>-->
+            <li><a href="javascript:;" onClick="changeLanguage('en')" ><?= Yii::t('app', 'English') ?></a></li>
+            <li><a href="javascript:;" onClick="changeLanguage('zh-CN')" ><?= Yii::t('app', 'Chinese') ?></a></li>
             <li><em class="icon-f-wc"></em><a href="#">xinyeweb</a></li>
-            <li><em class="icon-f-email"></em><a href="mailto:hello@xinyeweb.com">hello@foxmail.com</a></li>
+            <li><em class="icon-f-email"></em><a href="mailto:xinyeweb@foxmail.com">xinyeweb@foxmail.com</a></li>
         </ul>
         <p class="copyright">&copy; Copyright 2014 Xinye All Rights Reserved .</p>
-        <p class="copyright">粤ICP备15050675号-1</p>
     </footer>
     <!--/footer-->
     <?php $this->endBody() ?>

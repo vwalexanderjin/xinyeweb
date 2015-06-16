@@ -89,15 +89,15 @@ $config = [
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.qq.com',
-                'username' => '232767044@qq.com',
-                'password' => 'xinyeweb2014',
+                'username' => 'sales@xinyeweb.com',
+                'password' => 'xinyeweb2015',
                 'port' => '25',
                 'encryption' => 'tls',
             ],
-            'messageConfig'=>[
+            /*'messageConfig'=>[
                 'charset'=>'UTF-8',
-                'from'=>['232767044@qq.com'=>'admin']
-            ],
+                'from'=>['sales@xinyeweb.com0'=>'sales']
+            ],*/
         ],
         /*'session' => [
               'class' => 'yii\web\DbSession',

@@ -1,19 +1,17 @@
 <?php
 /* @var $this yii\web\View */
-$this->title = Yii::t('app','Xinyeweb');
-$this->registerMetaTag(['name'=>'description','content'=>Yii::$app->params['seo_description']]);
-$this->registerMetaTag(['name'=>'keywords','content'=>Yii::$app->params['seo_keywords']]);
+$this->title = Yii::t('app','xinyeweb');
 ?>
 <div class="da-slider" id="da-slider">
     <div class="da-slide da-slide-current">
         <h2>我们制作精良的 WEB 与 移动 APP 程式。</h2>
         <p>像个工匠，我们关心我们做了什么。每个像素都精致，每一行代码都高效。</p>
-        <div class="da-img"><img src="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/images/banner-item-1.png" alt=""></div>
+        <div class="da-img"><img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/images/banner-item-1.png" alt=""></div>
     </div>
     <div class="da-slide">
         <h2>我们制作精良的 WEB 与 移动 APP 程式。</h2>
         <p>像个工匠，我们关心我们做了什么。每个像素都精致，每一行代码都高效。</p>
-        <div class="da-img"><img src="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/images/banner-item-1.png" alt=""></div>
+        <div class="da-img"><img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/images/banner-item-1.png" alt=""></div>
     </div>
     <nav class="da-arrows">
         <span class="da-arrows-prev"></span>
@@ -32,19 +30,19 @@ $this->registerMetaTag(['name'=>'keywords','content'=>Yii::$app->params['seo_key
         <div class="c-title-white"><span>我们做些什么</span></div>
         <div class="list">
             <div class="item">
-                <img src="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/images/icon-1.png" alt="">
+                <img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/images/icon-1.png" alt="">
                 <p>品牌/网络推广</p>
             </div>
             <div class="item">
-                <img src="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/images/icon-2.png" alt="">
+                <img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/images/icon-2.png" alt="">
                 <p>网页/APP设计</p>
             </div>
             <div class="item">
-                <img src="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/images/icon-3.png" alt="">
+                <img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/images/icon-3.png" alt="">
                 <p>微信开发</p>
             </div>
             <div class="item">
-                <img src="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/images/icon-4.png" alt="">
+                <img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/images/icon-4.png" alt="">
                 <p>图像设计</p>
             </div>
         </div>
@@ -55,7 +53,7 @@ $this->registerMetaTag(['name'=>'keywords','content'=>Yii::$app->params['seo_key
     <div class="c-title"><span>近期项目</span></div>
     <ul class="list" id="home-showbox">
         <li>
-            <a href="http://www.xiazhinet.com"><img src="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/uploads/c1.jpg" alt=""></a>
+            <a href="http://www.xiazhinet.com"><img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/uploads/c1.jpg" alt=""></a>
             <div class="showbox">
                 <div class="overlay"></div>
                 <div class="content">
@@ -66,7 +64,7 @@ $this->registerMetaTag(['name'=>'keywords','content'=>Yii::$app->params['seo_key
             </div>
         </li>
         <li>
-            <a href="http://www.tvsstyle.com/"><img src="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/uploads/c2.jpg" alt=""></a>
+            <a href="http://www.tvsstyle.com/"><img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/uploads/c2.jpg" alt=""></a>
             <div class="showbox">
                 <div class="overlay"></div>
                 <div class="content">
@@ -77,7 +75,7 @@ $this->registerMetaTag(['name'=>'keywords','content'=>Yii::$app->params['seo_key
             </div>
         </li>
         <li>
-            <a href="http://www.chasss.com/"><img src="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/uploads/c3.jpg" alt=""></a>
+            <a href="http://www.chasss.com/"><img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/uploads/c3.jpg" alt=""></a>
             <div class="showbox">
                 <div class="overlay"></div>
                 <div class="content">
@@ -88,7 +86,7 @@ $this->registerMetaTag(['name'=>'keywords','content'=>Yii::$app->params['seo_key
             </div>
         </li>
         <li>
-            <a href="http://www.iya.mo/"><img src="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/uploads/c4.jpg" alt=""></a>
+            <a href="http://www.iya.mo/"><img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/uploads/c4.jpg" alt=""></a>
             <div class="showbox">
                 <div class="overlay"></div>
                 <div class="content">
@@ -99,7 +97,7 @@ $this->registerMetaTag(['name'=>'keywords','content'=>Yii::$app->params['seo_key
             </div>
         </li>
         <li>
-            <a href="http://nlp2ct.sftw.umac.mo/"><img src="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/uploads/c5.jpg" alt=""></a>
+            <a href="http://nlp2ct.sftw.umac.mo/"><img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/uploads/c5.jpg" alt=""></a>
             <div class="showbox">
                 <div class="overlay"></div>
                 <div class="content">
@@ -110,7 +108,7 @@ $this->registerMetaTag(['name'=>'keywords','content'=>Yii::$app->params['seo_key
             </div>
         </li>
         <li>
-            <a href="http://www.supermasterlogistics.com/"><img src="<?= Yii::$app->request->baseUrl ?>/web/xinye2014/uploads/c6.jpg" alt=""></a>
+            <a href="http://www.supermasterlogistics.com/"><img src="<?= Yii::$app->request->baseUrl ?>/xinye2014/uploads/c6.jpg" alt=""></a>
             <div class="showbox">
                 <div class="overlay"></div>
                 <div class="content">

@@ -26,4 +26,5 @@ return [
     'Delete'    =>  '删除',
     'Please Filter' =>  '请选择',
     'Articles' => '文章',
+    'Xinyeweb' => '鑫烨网络',
 ];
