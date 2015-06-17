@@ -9,13 +9,13 @@ use yii\widgets\ActiveForm;
 ?>
 <div class="basic-form">
 
-    <div class="col-md-3 col-sm-4">
+    <div class="col-md-6 col-sm-8">
 
         <?php $form = ActiveForm::begin(); ?>
 
         <?= $form->field($model, 'sys_site_name') ?>
-        <?= $form->field($model, 'sys_site_description') ?>
         <?= $form->field($model, 'sys_site_keywords') ?>
+        <?= $form->field($model, 'sys_site_description')->textarea() ?>
         <?= $form->field($model, 'sys_site_url') ?>
         <?= $form->field($model, 'sys_default_role') ?>
         <?= $form->field($model, 'sys_utc') ?>
