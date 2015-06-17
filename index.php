@@ -1,6 +1,6 @@
 <?php
 // comment out the following two lines when deployed to production
-defined('YII_DEBUG') or define('YII_DEBUG', true);
+/*defined('YII_DEBUG') or define('YII_DEBUG', true);
 defined('YII_ENV') or define('YII_ENV', 'dev');
 
 require(__DIR__ . '/vendor/autoload.php');
@@ -11,4 +11,5 @@ $config = require(__DIR__ . '/config/web.php');
 //(new yii\web\Application($config))->run();
 $application = new yii\web\Application($config);
 $application->language = isset($_COOKIE['language']) ? htmlspecialchars($_COOKIE['language']) : 'zh-CN';
-$application->run();
+$application->run();*/
+include './web/index.php';

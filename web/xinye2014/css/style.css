@@ -2,7 +2,7 @@
 /*
 	project : Xinye Official Website
 	author : Jason Kim
-	release : 4.4.2014
+	release : 2.September.2014
 */
 /*
 	common
@@ -53,7 +53,7 @@ body { font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif; font-size: 
 .slicknav_nav li { line-height: 36px; border-bottom: 1px solid #232323; border-top: 1px solid #0e0e0e; }
 .slicknav_nav li a { display: block; padding: 0 16px; height: 100%; color: #717171; }
 .slicknav_nav li a:hover {
-    color:#; background: #000; text-decoration: none; transition: background .5s; -webkit-transition: background .5s; }
+color:#; background: #000; text-decoration: none; transition: background .5s; -webkit-transition: background .5s; }
 /*
 	footer
 */
@@ -161,7 +161,7 @@ body { font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif; font-size: 
 */
 .about-team { width: 960px; margin: 0 auto; padding: 30px 0; overflow: hidden; }
 .about-team .item { float: left; width: 440px; margin: 0 20px; color: #000; letter-spacing: 3px; position: relative; }
-.about-team .avatar-jason, .about-team .avatar-hoter { width: 148px; height: 148px; border: 10px solid #000; border-radius: 50%; transition: linear 0.25s; cursor: pointer; margin: 30px auto; }
+.about-team .avatar-jason, .about-team .avatar-hoter { width: 148px; height: 148px; border: 10px solid #000; border-radius: 50%; transition: linear 0.25s; cursor: pointer; margin: 30px auto; display:block; }
 .about-team .avatar-jason { background: url(../images/avatar-1.jpg) no-repeat center; }
 .about-team .avatar-hoter { background: url(../images/avatar-2.jpg) no-repeat center; }
 .about-team .avatar-jason:hover { background: url(../images/avatar-1-hover.jpg) no-repeat center; }
@@ -169,7 +169,7 @@ body { font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif; font-size: 
 .about-team h2 { text-align: center; font-size: 3.6rem; text-align: center; }
 .about-team .dowhat { font-size: 1.8rem; color: #585858; text-align: center; padding: 0 0 20px 0; line-height: 30px; }
 .about-team .hobby { background: #f4f4f4; height: 110px; padding: 16px; color: #656565; line-height: 24px; letter-spacing: 1px; }
-.about-team .arrow-top { background: url(../images/arrow.png) no-repeat; width: 16px; height: 10px; position: absolute; top: 298px; left: 50%; margin-left: -8px; }
+.about-team .arrow-top { background: url(../images/arrow.png) no-repeat; width: 16px; height: 10px; position: absolute; top: 297px; left: 50%; margin-left: -8px; }
 .about-team .mailme { text-align: center; padding: 20px 0; font-size: 1.2rem; }
 .about-team .link-mail { color: #585858; line-height: 29px; background: url(../images/icon-30.png) no-repeat left center; padding: 0 0 0 40px; display: inline-block; }
 .about-team .link-mail:hover { background: url(../images/icon-29.png) no-repeat; text-decoration: none; color: #ffcc04; }
@@ -182,7 +182,7 @@ body { font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif; font-size: 
 */
 .contact-form { float: left; width: 700px; overflow: hidden; }
 .contact-form p { padding: 10px 0; overflow: hidden; position: relative; }
-.contact-form .txt, .contact-form .txt2 { float: left; border: 1px solid #dcdcdc; padding: 12px 10px; width: 330px; margin: 0 20px 5px 0; font-size: 1.6rem; }
+.contact-form .txt, .contact-form .txt2 { float: left; border: 1px solid #dcdcdc; padding: 12px 10px; width: 330px; margin: 0 20px 0 0; font-size: 1.6rem; }
 .contact-form .txt2 { width: 680px; }
 .contact-form .btn-area { padding: 0 20px 0 0; line-height: 40px; }
 .contact-form .mailing { float: left; color: #868686; display: block; }
@@ -226,12 +226,11 @@ body { font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif; font-size: 
 	page-nav
 */
 .page-nav { border-bottom: 1px solid #dfdfdf; padding: 40px 10px; width: 960px; margin: 0 auto 60px auto; }
-.page-nav li {float: left;  color: #706e6e;}
-.page-nav li:hover, .page-nav li.active { background: #e6e6e6; text-decoration: none; }
-.page-nav li.active { color: #000; background: #ffcc04; }
-.page-nav li { color: #706e6e; display: inline-block; padding: 6px 10px; }
+.page-nav a { color: #706e6e; display: inline-block; padding: 6px 10px; }
 .page-nav a:hover, .page-nav a.active { background: #e6e6e6; text-decoration: none; }
 .page-nav a.active { color: #000; background: #ffcc04; }
+.page-nav li { float: left; display: inline-block;}
+.page-nav li.active { background : #ffcc04;}
 /*
 	c-overlay
 */
@@ -309,7 +308,6 @@ body { font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif; font-size: 
 .signup-info h3 { font-size: 20px; margin: 0; line-height: 40px; color: #444444; }
 .signup-info p { color: #959595; }
 .signup-info figure { text-align: center; padding: 10px 0; }
-
 /*
     error
 */

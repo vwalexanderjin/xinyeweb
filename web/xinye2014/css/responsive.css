@@ -2,14 +2,14 @@
 /*
 	project : Xinye
 	author : Jason
-	date : 31.3.2014
+	date : 2.September.2014
 	==================================================================================
 */
 /* 
-	Extra small devices Phones (<768px) 
+	Small devices (tablets,Smartphones) 
 	==================================================================================
 */
-@media ( max-width: 320px) {
+@media (max-width : 767px) {
 /*
 	titles
 */
@@ -22,121 +22,9 @@
 /*
 	da-slide
 */
-.da-slider { max-width: 320px; height: 440px; }
 .da-slide h2 { font-size: 2.4rem; }
 .da-slide p { font-size: 1.4rem; }
-.da-slide .da-img { top: 220px; }
-.da-slide .da-img img { max-width: 310px; }
 .da-arrows { display: none; }
-/*
-	welcome-words
-*/
-.welcome-words { padding: 20px 0 40px 0; max-width: 320px; }
-.welcome-words p { font-size: 1.4rem; padding: 20px 10px; line-height: 24px; letter-spacing: 3px; }
-/*
-	what-we-do
-*/
-.what-we-do .list { max-width: 320px; padding: 30px 0 0 0; }
-.what-we-do .item { float: left; width: 50%; text-align: center; padding: 0 0 20px 0; }
-.what-we-do .item img { width: 100px; }
-.what-we-do .item p { font-size: 1.6rem; padding: 10px 0 0 0; letter-spacing: 3px; }
-/*
-	home-case
-*/
-.home-case .list { max-width: 310px; }
-.home-case .list li { float: none; width: 308px; height: auto; margin: 1px; position: relative; overflow: hidden; }
-.home-case .list img { max-width: 308px; }
-.home-case .showbox h3 { padding-top: 30px; }
-/*
-	start-pro
-*/
-.start-pro { height: 230px; }
-.start-pro h1 { padding: 14px 10px 0 10px; font-size: 2.4rem; }
-.start-pro h3 { font-size: 1.6rem; padding: 0 10px 10px 10px; }
-/*
-	footer
-*/
-.footer { height: auto; text-align: center; overflow: hidden; }
-.footer .links { padding: 38px 0 0 0; float: none; }
-.footer .links li { margin: 0; padding: 0 0 10px 0; line-height: 32px; float: none; }
-.footer .links a { font-size: 1.4rem; }
-.footer .copyright { font-size: 1.2rem; padding: 0; float: none; }
-/*
-	case-list
-*/
-.case-list li { height: auto; padding: 20px 0; }
-.case-list .inner { width: 310px; }
-.case-list h1 { font-size: 2.4rem; line-height: 36px; position: relative; left: auto; top: auto; width: 310px; text-align: center; }
-.case-list p { ont-size: 1.4rem; line-height: 24px; position: relative; left: auto; top: auto; width: 310px; text-align: left; padding: 20px 10px 0 10px; }
-.case-list figure { position: relative; width: 320px; text-align: center; right: auto; top: auto; }
-.case-list figure img { /* max-width: 632px; */ width: 300px; }
-.case-list .btn-visit { position: relative; top: auto; left: auto; margin: 0 auto; }
-.case-list .type2 h1 { left: auto; right: auto; text-align: center; }
-.case-list .type2 p { left: auto; right: auto; text-align: left; }
-.case-list .type2 .btn-visit { left: auto; right: auto; }
-.case-list .type2 figure { left: auto; }
-/*
-	service-list
-*/
-.service-list { width: 320px; margin: 30px 0; }
-.service-list li { float: none; width: 310px; margin: 10px 5px; }
-/*
-	blog-post
-*/
-.blog-post { width: 320px; }
-.blog-post figure { float: none; }
-.blog-post .main { float: none; width: 310px; margin: 0 auto; }
-.blog-post .main h5 { line-height: 36px; }
-.blog-post .date { text-align: center; }
-.blog-post .btn-blog { display: block; margin: 0 auto; }
-.share { display: none; }
-/*
-	about-info
-*/
-.about-info { width: 320px; margin: 30px 0; }
-.about-info figure { float: none; text-align: center; }
-.about-info figure img { width: 310px; }
-.about-info .content { float: none; width: 300px; margin: 0 auto; padding: 20px 0 0 0; }
-.about-info .content p { margin: 0 0 22px 0; }
-/*
-	about-goods
-*/
-.about-goods { width: 320px; margin: 30px 0 0 0; }
-.about-goods .item { float: none; width: 310px; margin: 10px auto; }
-.about-goods li { padding: 20px 30px 20px 40px; height: auto; background: url(../images/icon-28.png) no-repeat 20px 40px; }
-/*
-	about-team
-*/
-.about-team { width: 320px; margin: 0; }
-.about-team .item { float: none; width: 310px; margin: 0 auto; }
-.about-team .hobby { height: auto; }
-.about-team .arrow-top { top: 267px; }
-/*
-	contact-body
-*/
-.contact-body { width: 320px; }
-/*
-	contact-form
-*/
-.contact-form { float: none; width: 320px; }
-.contact-form p { padding: 0; text-align: center; margin: 0; }
-.contact-form .txt, .contact-form .txt2 { float: none; width: 300px; margin: 0 0 20px 0; }
-.contact-form .txt2 { width: 300px; height:100px; }
-.contact-form .btn-area { text-align: center; padding: 0; line-height:30px; }
-.contact-form .mailing { float: none; font-size:1.2rem; padding:0 5px; width:100%; }
-.contact-form .btn-send { float: none; width: 300px; margin:20px auto 0 auto; }
-/*
-	contact-ways
-*/
-.contact-ways { float: none; width: 320px; text-align:center; }
-.contact-ways h2 { font-size: 2rem; }
-.contact-ways .qr-code { position: relative; right: auto; top: auto; }
-}
-/* 
-	Extra small devices Phones (<768px) 
-	==================================================================================
-*/
-@media only screen and (max-width : 767px) {
 /*
 	header
 */
@@ -149,22 +37,492 @@
 .slicknav_menu { display: block; }
 }
 /* 
+	Smartphones (portrait)
+	==================================================================================
+*/
+@media ( min-width: 320px) and ( max-width:480px ) {
+/*
+	da-slide
+*/
+.da-slider { width: 100%; height: 440px; }
+.da-slide .da-img img { max-width: 310px; }
+/*
+	welcome-words
+*/
+.welcome-words { padding: 20px 0 40px 0; width: 90%; }
+.welcome-words p { padding: 20px 10px; }
+/*
+	what-we-do
+*/
+.what-we-do .list { width: 100%; padding: 30px 0 0 0; }
+.what-we-do .item { float: left; width: 50%; text-align: center; padding: 0 0 20px 0; }
+.what-we-do .item img { width: 100px; }
+.what-we-do .item p { font-size: 1.6rem; padding: 10px 0 0 0; }
+/*
+	home-case
+*/
+.home-case .list { width: 100%; max-width: 398px; margin: 0 auto; }
+.home-case .list li { float: none; width: 100%; max-width: 398px; height: auto; padding: 1px; margin: 0; }
+.home-case .list img { width: 100%; max-width: 398px; }
+.home-case .showbox h3 { padding-top: 30px; }
+/*
+	start-pro
+*/
+.start-pro { height: 230px; }
+.start-pro h1 { padding: 14px 10px 0 10px; font-size: 2.4rem; }
+.start-pro h3 { font-size: 1.6rem; padding: 0 10px 10px 10px; }
+/*
+	footer
+*/
+.footer { height: auto; text-align: center; overflow: hidden; }
+.footer .links { padding: 38px 0 0 0; float: none; }
+.footer .links li { margin: 0; padding: 0 0 10px 0; float: none; }
+.footer .links a { font-size: 1.4rem; }
+.footer .copyright { font-size: 1.2rem; padding: 0; float: none; }
+/*
+	case-list
+*/
+.case-list li { height: auto; padding: 20px 0; }
+.case-list .inner { width: 90%; }
+.case-list h1 { font-size: 2.4rem; line-height: 36px; position: relative; left: auto; top: auto; width: 100%; text-align: center; }
+.case-list p { ont-size: 1.4rem; line-height: 24px; position: relative; left: auto; top: auto; width: 100%; text-align: left; padding: 20px 10px 0 10px; }
+.case-list figure { position: relative; width: 100%; text-align: center; right: auto; top: auto; }
+.case-list figure img { /* max-width: 632px; */ width: 100%; }
+.case-list .btn-visit { position: relative; top: auto; left: auto; margin: 0 auto; }
+.case-list .type2 h1 { left: auto; right: auto; text-align: center; }
+.case-list .type2 p { left: auto; right: auto; text-align: left; }
+.case-list .type2 .btn-visit { left: auto; right: auto; }
+.case-list .type2 figure { left: auto; }
+/*
+	service-list
+*/
+.service-list { width: 100%; margin: 30px 0; }
+.service-list li { float: none; width: 98%; margin: 10px 5px; }
+/*
+	blog-post
+*/
+.blog-post { width: 90%; }
+.blog-post figure { float: none; }
+.blog-post .main { float: none; width: 100%; margin: 0 auto; }
+.blog-post .main h5 { line-height: 36px; }
+.blog-post .date { text-align: center; }
+.blog-post .btn-blog { display: block; margin: 0 auto; }
+.share { display: none; }
+/*
+	about-info
+*/
+.about-info { width: 100%; margin: 30px 0; }
+.about-info figure { float: none; text-align: center; }
+.about-info figure img { width: 90%; }
+.about-info .content { float: none; width: 90%; margin: 0 auto; padding: 20px 0 0 0; }
+.about-info .content p { margin: 0 0 22px 0; }
+/*
+	about-goods
+*/
+.about-goods { width: 100%; margin: 30px 0 0 0; }
+.about-goods .item { float: none; width: 96%; margin: 10px auto; }
+.about-goods li { padding: 20px 30px 20px 40px; height: auto; background: url(../images/icon-28.png) no-repeat 20px 40px; }
+/*
+	about-team
+*/
+.about-team { width: 100%; margin: 0; }
+.about-team .item { float: none; width: 90%; margin: 0 auto; }
+.about-team .hobby { height: auto; }
+.about-team .arrow-top { top: 267px; }
+/*
+	contact-body
+*/
+.contact-body { width: 100%; }
+/*
+	contact-form
+*/
+.contact-form { float: none; width: 100%; }
+.contact-form p { padding: 0; text-align: center; margin: 0; }
+.contact-form .txt, .contact-form .txt2 { float: none; width: 90%; margin: 0 0 20px 0; }
+.contact-form .txt2 { width: 90%; height: 100px; }
+.contact-form .btn-area { text-align: center; padding: 0; line-height: 30px; }
+.contact-form .mailing { float: none; font-size: 1.2rem; padding: 0 5px; width: 100%; }
+.contact-form .btn-send { float: none; width: 90%; margin: 20px auto 0 auto; }
+/*
+	contact-ways
+*/
+.contact-ways { float: none; width: 90%; text-align: center; margin:30px auto; }
+.contact-ways h2 { font-size: 2rem; }
+.contact-ways .qr-code { position: relative; right: auto; top: auto; }
+}
+/* 
+	portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide.
+	==================================================================================
+*/
+@media (min-width: 481px ) and (max-width: 767px ) {
+/*
+	da-slide
+*/
+.da-slider { width: 100%; height: 560px; }
+.da-slide .da-img img { max-width: 90%; }
+/*
+	welcome-words
+*/
+.welcome-words { max-width: 90%; }
+/*
+	what-we-do
+*/
+.what-we-do .list { max-width: 100%; padding: 30px 0 0 0; }
+.what-we-do .item { float: left; width: 50%; text-align: center; padding: 0 0 20px 0; }
+.what-we-do .item img { width: 100px; }
+.what-we-do .item p { font-size: 1.6rem; padding: 10px 0 0 0; }
+/*
+	home-case
+*/
+.home-case .list { width: 100%; }
+.home-case .list li { width: 50%; height: auto; margin: 0; padding: 1px; }
+.home-case .list img { max-width: 100%; }
+.home-case .showbox h3 { padding-top: 30px; }
+/*
+	footer
+*/
+.footer { height: auto; text-align: center; overflow: hidden; }
+.footer .links { padding: 38px 0 0 0; float: none; }
+.footer .links li { margin: 0; padding: 0 0 10px 0; float: none; }
+.footer .links a { font-size: 1.4rem; }
+.footer .copyright { font-size: 1.2rem; padding: 0; float: none; }
+/*
+	case-list
+*/
+.case-list li { height: auto; padding: 20px 0; }
+.case-list .inner { width: 90%; }
+.case-list h1 { font-size: 2.4rem; line-height: 36px; position: relative; left: auto; top: auto; width: 100%; text-align: center; }
+.case-list p { ont-size: 1.4rem; line-height: 24px; position: relative; left: auto; top: auto; width: 100%; text-align: left; padding: 20px 10px 0 10px; }
+.case-list figure { position: relative; width: 100%; text-align: center; right: auto; top: auto; }
+.case-list figure img { /* max-width: 632px; */ width: 60%; }
+.case-list .btn-visit { position: relative; top: auto; left: auto; margin: 0 auto; }
+.case-list .type2 h1 { left: auto; right: auto; text-align: center; }
+.case-list .type2 p { left: auto; right: auto; text-align: left; }
+.case-list .type2 .btn-visit { left: auto; right: auto; }
+.case-list .type2 figure { left: auto; }
+/*
+	service-list
+*/
+.service-list { width: 98%; margin: 30px auto; }
+.service-list li { float: none; width: 100%; height: auto; margin: 10px auto; padding: 0 0 40px 0; }
+/*
+	blog-post
+*/
+.blog-post { width: 100%; }
+.blog-post figure { float: none; }
+.blog-post .main { float: none; width: 90%; margin: 0 auto; }
+.blog-post .main h5 { line-height: 36px; }
+.blog-post .date { text-align: left; }
+.blog-post .btn-blog { display: block; margin: 0; }
+.share { display: none; }
+/*
+	about-info
+*/
+.about-info { width: 100%; margin: 30px 0; }
+.about-info figure { float: none; text-align: center; }
+.about-info figure img { width: 90%; max-width: 550px; }
+.about-info .content { float: none; width: 90%; margin: 0 auto; padding: 20px 0 0 0; }
+.about-info .content p { margin: 0 0 22px 0; }
+/*
+	about-goods
+*/
+.about-goods { width: 100%; margin: 30px 0 0 0; }
+.about-goods .item { float: none; width: 96%; margin: 10px auto; }
+.about-goods li { padding: 20px 30px 20px 40px; height: auto; background: url(../images/icon-28.png) no-repeat 20px 40px; }
+/*
+	about-team
+*/
+.about-team { width: 100%; margin: 0; }
+.about-team .item { float: none; width: 90%; margin: 0 auto; }
+.about-team .hobby { height: auto; }
+.about-team .arrow-top { top: 267px; }
+/*
+	contact-body
+*/
+.contact-body { width: 100%; }
+/*
+	contact-form
+*/
+.contact-form { float: none; width: 100%; }
+.contact-form p { padding: 0; text-align: center; margin: 0; }
+.contact-form .txt, .contact-form .txt2 { float: none; width: 90%; margin: 0 0 20px 0; }
+.contact-form .txt2 { width: 90%; height: 100px; }
+.contact-form .btn-area { text-align: center; padding: 0; line-height: 30px; }
+.contact-form .mailing { float: none; font-size: 1.2rem; padding: 0 5px; width: 100%; }
+.contact-form .btn-send { float: none; width: 90%; margin: 20px auto 0 auto; }
+/*
+	contact-ways
+*/
+.contact-ways { float: none; width: 90%; text-align: center; margin: 30px auto; }
+.contact-ways h2 { font-size: 2.4rem; }
+.contact-ways .qr-code { position: relative; right: auto; top: auto; }
+}
+/* 
+	portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones 
+*/
+@media (min-width: 641px ) and (max-width: 767px ) {
+/*
+	da-slide
+*/
+.da-slider { width: 100%; height: 620px; }
+.da-slide .da-img img { max-width: 90%; }
+}
+/* 
 	Small devices (tablets, 768px and up) 
 	==================================================================================
 */
-@media (min-width: 768px ) {
+@media (min-width: 768px ) and (max-width: 991px) {
+/*
+	da-slide
+*/
+.da-slider { min-width: 768px; height: 680px; }
+.da-slide h2 { font-size: 3.0rem; }
+.da-slide p { font-size: 1.8rem; }
+.da-slide .da-img img { max-width: 748px; }
+/*
+	welcome-words
+*/
+.welcome-words { max-width: 768px; }
+.welcome-words p { padding: 20px; }
+/*
+	what-we-do
+*/
+.what-we-do .list { max-width: 768px; padding: 80px 0 0 0; }
+.what-we-do .item { float: left; width: 25%; text-align: center; padding: 0 0 20px 0; }
+.what-we-do .item img { width: 120px; }
+.what-we-do .item p { font-size: 1.8rem; padding: 10px 0 0 0; }
+/*
+	home-case
+*/
+.home-case .list { width: 768px; }
+.home-case .list li { width: 254px; height: auto; }
+.home-case .list img { max-width: 254px; }
+.home-case .showbox h3 { font-size: 2.4rem; padding-top: 20px; }
+.home-case .showbox p { font-size: 1.4rem; }
+/*
+	case-list
+*/
+.case-list li { height: 300px; padding: 20px 0; }
+.case-list .inner { width: 748px; }
+.case-list h1 { font-size: 2.4rem; line-height: 36px; top: 30px; width: 420px; }
+.case-list p { font-size: 1.2rem; line-height: 24px; top: 96px; width: 420px; }
+.case-list figure { width: 300px; right: 0; }
+.case-list figure img { /* max-width: 632px; */ width: 300px; }
+.case-list .btn-visit { top: 180px; }
+/*
+	service-list
+*/
+.service-list { max-width: 768px; }
+.service-list li { width: 236px; height: 380px; }
+/*
+	blog-post
+*/
+.blog-post { max-width: 748px; }
+.blog-post .main { width: 520px; }
+/*
+	page-nav
+*/
+.page-nav { max-width: 748px; }
+/*
+	about-info
+*/
+.about-info { max-width: 748px; }
+.about-info figure img { width: 360px; }
+.about-info .content { width: 360px; }
+.about-info .content p { margin: 0 0 22px 0; }
+/*
+	about-goods
+*/
+.about-goods { max-width: 768px; }
+.about-goods .item { width: 236px; }
+.about-goods li { padding: 20px 30px 20px 30px; height: 200px; background: url(../images/icon-28.png) no-repeat 10px 40px; }
+/*
+	about-team
+*/
+.about-team { max-width: 768px; }
+.about-team .item { width: 344px; }
+.about-team .hobby { height: auto; }
+.about-team .arrow-top { top: 297px; }
+/*
+	contact-body
+*/
+.contact-body { width: 748px; }
+/*
+	contact-form
+*/
+.contact-form { width: 320px; }
+.contact-form p { padding: 0; text-align: center; margin: 0; }
+.contact-form .txt, .contact-form .txt2 { width: 320px; margin: 0 0 20px 0; }
+.contact-form .txt2 { width: 320px; height: 100px; }
+.contact-form .btn-area { text-align: center; padding: 0; line-height: 30px; }
+.contact-form .mailing { float: none; font-size: 1.2rem; padding: 0 5px; width: 100%; }
+.contact-form .btn-send { float: none; width: 320px; margin: 20px auto 0 auto; }
+/*
+	contact-ways
+*/
+.contact-ways { width: 320px; }
+.contact-ways h2 { font-size: 2rem; margin: 10px 0 0 0; }
 }
-
 /* 
 	Medium devices (desktops, 992px and up) 
 	==================================================================================
 */
 @media (min-width: 992px ) {
+/*
+	da-slide
+*/
+.da-slider { min-width: 960px; height: 780px; }
+.da-slide h2 { font-size: 3.6rem; }
+.da-slide p { font-size: 2.0rem; }
+.da-slide .da-img img { max-width: 950px; }
+/*
+	welcome-words
+*/
+.welcome-words { min-width: 960px; }
+.welcome-words p { padding: 20px; }
+/*
+	what-we-do
+*/
+.what-we-do .list { min-width: 960px; }
+.what-we-do .item { float: left; width: 25%; text-align: center; padding: 0 0 20px 0; }
+.what-we-do .item img { width: auto; }
+.what-we-do .item p { font-size: 2.4rem; padding: 30px 0 0 0; }
+/*
+	home-case
+*/
+.home-case .list { width: 960px; }
+.home-case .list li { width: 318px; height: auto; }
+.home-case .list img { max-width: 318px; }
+.home-case .showbox h3 { padding-top: 40px; }
+/*
+	case-list
+*/
+.case-list li { height: 380px; }
+.case-list .inner { width: 960px; }
+.case-list h1 { font-size: 4.8rem; line-height: 56px; top: 40px; width: 520px; }
+.case-list p { font-size: 1.4rem; line-height: 24px; top: 140px; width: 520px; }
+.case-list figure { width: 400px; right: 0; }
+.case-list figure img { /* max-width: 632px; */ width: 400px; }
+.case-list .btn-visit { top: 230px; }
+/*
+	service-list
+*/
+.service-list { min-width: 960px; }
+.service-list li { width: 300px; height: 360px; }
+/*
+	blog-post
+*/
+.blog-post { min-width: 960px; }
+.blog-post .main { width: 700px; }
+/*
+	page-nav
+*/
+.page-nav { min-width: 960px; }
+/*
+	about-info
+*/
+.about-info { min-width: 960px; }
+.about-info figure img { width: 420px; }
+.about-info .content { width: 510px; }
+.about-info .content p { margin: 0 0 22px 0; }
+/*
+	about-goods
+*/
+.about-goods { min-width: 960px; }
+.about-goods .item { width: 300px; }
+.about-goods li { height: 160px; }
+/*
+	about-team
+*/
+.about-team { min-width: 960px; }
+.about-team .item { width: 440px; }
+.about-team .hobby { height: 110px; }
+.about-team .arrow-top { top: 297px; }
+/*
+	contact-body
+*/
+.contact-body { width: 960px; }
+/*
+	contact-form
+*/
+.contact-form { width: 560px; }
+.contact-form p { padding: 10px 0; text-align: center; margin: 0; }
+.contact-form .txt, .contact-form .txt2 { float: left; width: 260px; margin: 0 20px 0 0; }
+.contact-form .txt2 { width: 540px; height: 180px; }
+.contact-form .btn-area { text-align: center; padding: 0; line-height: 30px; }
+.contact-form .mailing { float: left; font-size: 1.2rem; padding: 0 5px; width: auto; }
+.contact-form .btn-send { float: right; width: 124px; margin: 0 20px 0 0; }
 }
-
 /* 
 	Large devices (large desktops, 1200px and up) 
 	==================================================================================
 */
 @media (min-width: 1200px ) {
+/*
+	welcome-words
+*/
+.welcome-words { min-width: 1200px; }
+.welcome-words p { padding: 20px 0 0 0; }
+/*
+	what-we-do
+*/
+.what-we-do .list { min-width: 1200px; padding: 70px 0 0 0; }
+.what-we-do .item { float: left; width: 25%; text-align: center; padding: 0 0 20px 0; }
+.what-we-do .item img { width: auto; }
+.what-we-do .item p { font-size: 2.4rem; padding: 30px 0 0 0; }
+/*
+	home-case
+*/
+.home-case .list { width: 1200px; }
+.home-case .list li { width: 398px; height: auto; }
+.home-case .list img { max-width: 398px; }
+.home-case .showbox h3 { font-size: 3rem; padding-top: 70px; }
+.home-case .showbox p { font-size: 1.8rem; }
+/*
+	case-list
+*/
+.case-list li { height: 460px; padding: 40px 30px; }
+.case-list .inner { width: 1200px; }
+.case-list h1 { font-size: 4.8rem; line-height: 56px; top: 40px; width: 730px; }
+.case-list p { font-size: 1.4rem; line-height: 24px; top: 140px; width: 730px; }
+.case-list figure { width: 420px; right: 0; top: 30px; }
+.case-list figure img { /* max-width: 632px; */ width: 420px; }
+.case-list .btn-visit { top: 210px; }
+/*
+	service-list
+*/
+.service-list { min-width: 1200px; }
+.service-list li { width: 280px; height: 360px; }
+/*
+	about-info
+*/
+.about-info { min-width: 1200px; }
+.about-info figure img { width: 550px; }
+.about-info .content { width: 560px; }
+.about-info .content p { margin: 0 0 22px 0; }
+/*
+	about-goods
+*/
+.about-goods { min-width: 1200px; }
+.about-goods .item { width: 380px; }
+.about-goods li { height: 156px; padding: 20px 30px 20px 40px; background: url(../images/icon-28.png) no-repeat 20px 40px; }
+/*
+	contact-body
+*/
+.contact-body { width: 1200px; }
+/*
+	contact-form
+*/
+.contact-form { width: 700px; }
+.contact-form p { padding: 10px 0; text-align: center; margin: 0; }
+.contact-form .txt, .contact-form .txt2 { float: left; width: 330px; margin: 0 20px 10px 0; }
+.contact-form .txt2 { width: 680px; height: auto; }
+.contact-form .btn-area { text-align: center; padding: 0; line-height: 30px; }
+.contact-form .mailing { float: left; font-size: 1.2rem; padding: 0 5px; width: auto; }
+.contact-form .btn-send { float: right; width: 124px; margin: 0 20px 0 0; }
+/*
+	contact-ways
+*/
+.contact-ways { width: 400px; }
+.contact-ways h2 { font-size: 3rem; margin: 10px 0 0 0; }
 }
