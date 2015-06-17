@@ -25,7 +25,7 @@ class BaseConfig extends BaseModel{
         }
     }
 
-    protected function initOneInternal($key, $defaultValue=' ') {
+    protected function initOneInternal($key, $defaultValue='') {
         $model = Config::findOne(['key'=>$key]);
         if ($model != null) {
             $this->$key = $model->val;
@@ -42,13 +42,12 @@ class BaseConfig extends BaseModel{
     protected function saveAll() {
         $keys = $this->getConfigKeys();
         foreach ($keys as $key) {
+            //echo $key. "=============" .$this->$key."<br>";
             $this->saveOne($key, $this->$key);
         }
     }
 
     protected function saveOne($key, $val) {
-        echo $key . '<===================>' .$val . "<br>";
-        //Config::updateAll(['key'=>$key],['val'=>$val]);
-        Config::updateAll(['key'=>$key],['val'=>$val]);
+        Config::updateAll(['val'=>$val],['key'=>$key]);
     }
 }

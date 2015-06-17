@@ -39,9 +39,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' =>  (isset($model->img) && ($model->img!=null)) ? '<img src='.Yii::$app->request->baseUrl . '/uploads/ad/'.$model->img.' style="height:200px" />' : '<img src='.Yii::$app->request->baseUrl . '/uploads/post/no_img.png />',
             ],
             'position',
-            'ctime',
-            'utime',
-            'status',
+            [
+                'attribute' => 'ctime',
+                'foramt' => 'raw',
+                'value' => date('Y-m-d H:i:s', $model->ctime)
+            ],
+            [
+                'attribute' => 'utime',
+                'foramt' => 'raw',
+                'value' => date('Y-m-d H:i:s', $model->utime)
+            ],
+            [
+                'attribute' => 'status',
+                'value' => \yii\helpers\ArrayHelper::getValue(\app\modules\ad\models\Ad::status(),$model->status)
+            ],
             'cid',
             'sort',
         ],

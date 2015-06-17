@@ -19,14 +19,7 @@ class BaseController extends Controller{
     protected $_request;
     protected $_xyCms;
     protected $_xyCmsRelease;
-    public $messageLayout = '//common/message';
-
-    public function init() {
-        $this->_baseUrl = Yii::$app->request->baseUrl;
-        $this->_request = Yii::$app->request;
-        $this->_xyCms = "XYCMS 1.0.0";
-        $this->_xyCmsRelease= "20150531";
-    }
+    public $messageLayout = '//layouts/common/message';
 
     /**
      * @param 发送消息

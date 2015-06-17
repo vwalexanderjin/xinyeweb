@@ -3,6 +3,7 @@
 namespace app\modules\admin\controllers;
 
 use app\core\base\backend\BackendBaseController;
+use yii\helpers\Json;
 use yii\web\Controller;
 
 class DefaultController extends BackendBaseController
@@ -38,8 +39,22 @@ class DefaultController extends BackendBaseController
         $data['mysqlVersion'] = $mysqlVersion[0]['version'];
         $data['dbsize'] = $dbsize ? '已知' : '未知';
         //$notebook = Admin::model()->findByPk($this->_admini['userId']);
-        $notebook = ['aa'];
+        $notebook = file_get_contents(\Yii::getAlias('./uploads/note.log'));
         $env = 'aa';
         return $this->render('home', array ('notebook' => $notebook ,'env'=>$env, 'server' => $data ));
+    }
+
+    public function actionNotebookUpdate() {
+        if (\Yii::$app->request->isAjax) {
+            $file = \Yii::getAlias('./uploads/note.log');
+            if (file_put_contents($file, $_POST['notebook'])) {
+                $data['state'] = 'success';
+                $data['message'] = '更新成功';
+            }
+        } else {
+            $data['state'] = 'success';
+            $data['message'] = '更新成功';
+        }
+        echo Json::encode($data);
     }
 }

@@ -87,7 +87,7 @@ class AdController extends BackendBaseController
         $oldImg = $model->img;
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ( !$this->uploadFile($model,'img','ad',$oldImg)) {
-                $model->logo = $oldImg;
+                $model->img = $oldImg;
             }
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);

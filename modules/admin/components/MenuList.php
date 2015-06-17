@@ -33,12 +33,16 @@ class MenuList
                     'url' => 'config/config/basic'
                 ],
                 [
+                    'name' => '模板设置',
+                    'url' => 'config/config/theme'
+                ],
+                [
                     'name' => 'SEO设置',
                     'url' => 'admin/category/index'
                 ],
                 [
-                    'name' => '自定义设置',
-                    'url' => 'admin/category/index'
+                    'name' => '邮箱设置',
+                    'url' => 'config/config/email'
                 ]
             ],
         ],
@@ -47,24 +51,16 @@ class MenuList
             'url' => 'post/post/index',
             'action' => [
                 [
-                    'name' => '分类管理',
-                    'url' => 'category/category/index',
-                ],
-                [
                     'name' => '内容管理',
                     'url' => 'post/post/index',
                 ],
                 [
+                    'name' => '分类管理',
+                    'url' => 'category/category/index',
+                ],
+                [
                     'name' => '链接管理',
                     'url' => 'link/link/index',
-                ],
-                [
-                    'name' => '评论管理',
-                    'url' => 'comment/comment/index'
-                ],
-                [
-                    'name' => '专题管理',
-                    'url' => 'admin/category/index'
                 ],
                 [
                     'name' => '单页管理',
@@ -91,6 +87,16 @@ class MenuList
                 [
                     'name' => '赋权管理',
                     'url' => 'rbac/assign/index'
+                ]
+            ],
+        ],
+        '模板' => [
+            'controller' => 'home',
+            'url' => 'file/file/index',
+            'action' => [
+                [
+                    'name' => '模板管理',
+                    'url' => 'file/file/index'
                 ]
             ],
         ],

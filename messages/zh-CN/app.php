@@ -27,4 +27,5 @@ return [
     'Please Filter' =>  '请选择',
     'Articles' => '文章',
     'Xinyeweb' => '鑫烨网络',
+    'Admin Login' => '后台登陆',
 ];

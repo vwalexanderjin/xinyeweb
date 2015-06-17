@@ -13,6 +13,7 @@ class BasicConfig extends BaseConfig{
 
     public $sys_site_name;
     public $sys_site_description;
+    public $sys_site_keywords;
     public $sys_site_url;
     public $sys_site_email;
     public $sys_allow_register;
@@ -28,7 +29,7 @@ class BasicConfig extends BaseConfig{
 
     public function rules () {
         return [
-            [['sys_site_name','sys_site_description','sys_site_url','sys_default_role','sys_utc','sys_date_format','sys_date_format_custom',
+            [['sys_site_name','sys_site_description','sys_site_keywords','sys_site_url','sys_default_role','sys_utc','sys_date_format','sys_date_format_custom',
             'sys_time_format','sys_time_format_custom','sys_lang','sys_icp','sys_stat'],'string'],
             [['sys_allow_register'],'boolean'],
             [['sys_site_email'],'email'],
@@ -39,6 +40,7 @@ class BasicConfig extends BaseConfig{
         return [
             'sys_site_name' => '网站名称',
             'sys_site_description' => '网站描述',
+            'sys_site_keywords' => '网站关键字',
             'sys_site_url' => '网站URL',
             'sys_site_email' => '网站EMAIL',
             'sys_allow_register' => '允许注册',
@@ -56,11 +58,17 @@ class BasicConfig extends BaseConfig{
 
     public function initValue() {
         parent::initAllInternal();
-        echo "<pre>";
-        print_r($this->attributes);
     }
 
     public function save() {
         parent::saveAll();
+    }
+
+    public static function sysLanguage () {
+        return [
+            '0' => '简体',
+            '1' => '繁體',
+            '2' => 'English',
+        ];
     }
 }

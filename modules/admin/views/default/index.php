@@ -16,7 +16,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl.'/static/admin/css/manage.css
     <?php $i++;endforeach;?>
         </ul>
     </div>
-    <div class="logininfo"><span class="welcome"><img src="<?=Yii::$app->request->baseUrl?>/static/admin/images/user_edit.png" align="absmiddle"> 欢迎, <em><?php echo 'aaa'?></em> </span> <a href="<?=Url::to(['admin/ownerUpdate'])?>" target="win">修改密码</a> <a href="<?=Url::to(['public/logout'])?>" target="_top">退出登录</a> <a href="<?=Yii::$app->homeUrl?>" target="_blank">前台首页</a></div>
+    <div class="logininfo"><span class="welcome"><img src="<?=Yii::$app->request->baseUrl?>/static/admin/images/user_edit.png" align="absmiddle"> 欢迎, <em><?=Yii::$app->user->identity->username?></em> </span> <a href="<?=Url::to(['admin/ownerUpdate'])?>" target="win">修改密码</a> <a href="<?=Url::to(['index/logout'])?>" target="_top">退出登录</a> <a href="<?=Yii::$app->homeUrl?>" target="_blank">前台首页</a></div>
 </div>
 <div class="topline">
     <div class="toplineimg left" id="imgLine"></div>
@@ -34,7 +34,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl.'/static/admin/css/manage.css
         </div>
     </div>
     <div class="mainB" id="mainB" style="padding: 20px;">
-        <iframe src="<?=Url::to('default/home')?>" name="win" id="win" width="100%" height="100%" frameborder="0"></iframe>
+        <iframe src="<?=Url::to(['/admin/default/home'])?>" name="win" id="win" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 </div>
 

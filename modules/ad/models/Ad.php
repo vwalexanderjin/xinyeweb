@@ -3,6 +3,7 @@
 namespace app\modules\ad\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "{{%ad}}".
@@ -78,4 +79,13 @@ class Ad extends \app\core\base\BaseActiveRecord
             return false;
         }
     }
+
+    public static function status() {
+        return [
+            '0' => '隐藏',
+            '1' => '显示',
+        ];
+    }
+
+
 }

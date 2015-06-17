@@ -12,7 +12,7 @@ class BackendBaseController extends BaseController{
     public function init() {
         parent::init();
         //$this->layout = '/backend/main';
-        //$this->checkAdmin();
+        $this->checkAdmin();
     }
 
     public function checkAdmin() {

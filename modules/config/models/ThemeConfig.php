@@ -9,6 +9,8 @@
 namespace app\modules\config\models;
 
 
+use app\modules\file\components\Dir;
+
 class ThemeConfig extends BaseConfig{
     public $sys_site_theme;
 
@@ -18,17 +20,22 @@ class ThemeConfig extends BaseConfig{
         ];
     }
 
-    public function attributes() {
+    public function attributeLabels() {
         return [
             'sys_site_theme' => '主题'
         ];
     }
 
-    public function initAll() {
+    public function initValue() {
         parent::initAllInternal();
     }
 
     public function save() {
         parent::saveAll();
+    }
+
+    public static function getThemes() {
+        $themePath = \Yii::getAlias('./../themes');
+        return Dir::readDirectory($themePath)['dir'];
     }
 }

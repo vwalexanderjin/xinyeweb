@@ -15,6 +15,7 @@ use yii\widgets\ActiveForm;
 
         <?= $form->field($model, 'sys_site_name') ?>
         <?= $form->field($model, 'sys_site_description') ?>
+        <?= $form->field($model, 'sys_site_keywords') ?>
         <?= $form->field($model, 'sys_site_url') ?>
         <?= $form->field($model, 'sys_default_role') ?>
         <?= $form->field($model, 'sys_utc') ?>
@@ -22,7 +23,7 @@ use yii\widgets\ActiveForm;
         <?= $form->field($model, 'sys_date_format_custom') ?>
         <?= $form->field($model, 'sys_time_format') ?>
         <?= $form->field($model, 'sys_time_format_custom') ?>
-        <?= $form->field($model, 'sys_lang') ?>
+        <?= $form->field($model, 'sys_lang')->dropDownList(\app\modules\config\models\BasicConfig::sysLanguage()) ?>
         <?= $form->field($model, 'sys_icp') ?>
         <?= $form->field($model, 'sys_stat') ?>
         <?= $form->field($model, 'sys_allow_register') ?>

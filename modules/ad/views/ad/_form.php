@@ -27,8 +27,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'href')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'status')->radioList(\app\modules\ad\models\Ad::status()) ?>
+
+    <?= $form->field($model, 'sort')->textInput() ?>
+
     <?= $form->field($model, 'img')->fileInput(['class'=>'form-control']) ?>
-    
+
     <div class="form-group">
         <label class="col-lg-1 control-label" for="ad-img"></label>
         <div class="col-lg-3">
@@ -42,14 +46,6 @@ use yii\widgets\ActiveForm;
             ?>
         </div>
     </div>
-
-    <?= $form->field($model, 'position')->textInput() ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <?= $form->field($model, 'cid')->textInput() ?>
-
-    <?= $form->field($model, 'sort')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
