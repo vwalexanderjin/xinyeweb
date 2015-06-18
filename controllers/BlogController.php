@@ -10,7 +10,7 @@ use yii\data\Pagination;
 class BlogController extends BaseController{
 
     public function actionIndex () {
-        $data = Post::find()->orderBy('utime DESC');
+        $data = Post::find()->with('category')->orderBy('utime DESC');
         $pages = new Pagination(['totalCount'=>$data->count(), 'pageSize'=>'1']);
         $blogList = $data->offset($pages->offset)->limit($pages->limit)->asArray()->all();
         return $this->render('index',['blogList'=>$blogList,'pages'=>$pages]);

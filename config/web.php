@@ -117,10 +117,14 @@ $config = [
                 'admin' => 'admin/default/index',
                 'case'  =>  'case/index',
                 'service'   =>  'service/index',
-                'blog'  =>  'article/index',
+                'blog'  =>  'blog/index',
+                'a-<id:\d+>' => 'blog/view',
                 'about' => 'site/about',
                 'contact' => 'site/contact',
                 'login' => 'site/login',
+
+                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+                '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
             ],
         ],*/
         'log' => [
@@ -134,13 +138,13 @@ $config = [
         ],
         'db' => require(__DIR__ . '/db.php'),
         //主题
-        /*'view' => [
+        'view' => [
             //'class' => 'yii\web\View',
             'theme' =>  [
                 'pathMap' => ['@app/views' => '@app/themes/xinye2014'],
                 'baseUrl' => '@web/themes/xinye2014'
             ],
-        ],*/
+        ],
     ],
     'params' => $params,
 ];

@@ -45,7 +45,7 @@ class Post extends \app\core\base\BaseActiveRecord
     public function rules()
     {
         return [
-            [['title', 'title_second', 'redirect_url', 'from', 'seo_title', 'seo_keywords', 'seo_description', 'template', 'tags', 'info', 'content'], 'required'],
+            [['title', 'info', 'content'], 'required'],
             [['ishot', 'status', 'ctime', 'utime', 'cid', 'uid'], 'integer'],
             [['content'], 'string'],
             [['title', 'thumb'], 'string', 'max' => 200],
@@ -55,7 +55,7 @@ class Post extends \app\core\base\BaseActiveRecord
             [['template'], 'string', 'max' => 30],
             [['tags', 'info'], 'string', 'max' => 255],
             [['type'], 'string', 'max' => 10],
-            [['thumb'],'safe']
+            [['thumb','tags','title_second', 'redirect_url', 'from', 'seo_title', 'seo_keywords', 'seo_description', 'template',],'safe']
            // [['ctime','utime'],'safe']
         ];
     }
@@ -92,6 +92,8 @@ class Post extends \app\core\base\BaseActiveRecord
     public function getCategory() {
         return $this->hasOne(Category::className(), ['id'=>'cid']);
     }
+
+
 
     public static function status() {
         return [
