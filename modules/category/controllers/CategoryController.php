@@ -58,7 +58,7 @@ class CategoryController extends BackendBaseController
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate($pid=0)
+    public function actionCreate($pid=null)
     {
         $pid = isset($pid) ? $pid : 0;
         $model = new Category();

@@ -24,7 +24,7 @@ class MenuList
                 ]
             ],
         ],
-        '设置' => [
+        '系统' => [
             'controller' => 'home',
             'url' => 'config/config/basic',
             'action' => [
@@ -43,6 +43,10 @@ class MenuList
                 [
                     'name' => '邮箱设置',
                     'url' => 'config/config/email'
+                ],
+                [
+                    'name' => '清理缓存',
+                    'url' => 'admin/public/clear-cache'
                 ]
             ],
         ],
@@ -97,6 +101,16 @@ class MenuList
                 [
                     'name' => '模板管理',
                     'url' => 'file/file/index'
+                ]
+            ],
+        ],
+        '相册' => [
+            'controller' => 'home',
+            'url' => 'album/album-cate/index',
+            'action' => [
+                [
+                    'name' => '相册管理',
+                    'url' => 'album/album-cate/index'
                 ]
             ],
         ],

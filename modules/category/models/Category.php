@@ -33,9 +33,8 @@ class Category extends \app\core\base\BaseActiveRecord
     public function rules()
     {
         return [
-            [['pid', 'name', 'description', 'module','type'], 'required'],
-            [['pid'], 'integer'],
-            [['name', 'module'], 'string', 'max' => 50],
+            [['name', 'description', 'module','type'], 'required'],
+            [['name', 'module','rote'], 'string', 'max' => 50],
             [['description'], 'string', 'max' => 128],
             [['url'], 'string', 'max' => 255]
         ];

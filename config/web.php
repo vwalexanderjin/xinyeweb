@@ -37,6 +37,9 @@ $config = [
         'page' => [
             'class' => 'app\modules\page\Module',
         ],
+        'album' => [
+            'class' => 'app\modules\album\Module',
+        ],
         'test' => [
             'class' => 'app\modules\test\Module',
         ],
@@ -111,6 +114,7 @@ $config = [
             'suffix' => '.html',
             'rules' => [
                 'index' => 'site/index',
+                'admin' => 'admin/default/index',
                 'case'  =>  'case/index',
                 'service'   =>  'service/index',
                 'blog'  =>  'article/index',
@@ -130,13 +134,13 @@ $config = [
         ],
         'db' => require(__DIR__ . '/db.php'),
         //主题
-        'view' => [
+        /*'view' => [
             //'class' => 'yii\web\View',
             'theme' =>  [
                 'pathMap' => ['@app/views' => '@app/themes/xinye2014'],
-//                'baseUrl' => '@web/themes/xinye2014'
+                'baseUrl' => '@web/themes/xinye2014'
             ],
-        ],
+        ],*/
     ],
     'params' => $params,
 ];
