@@ -16,19 +16,13 @@ class UEditor extends InputWidget{
             'lang' => (strtolower(\Yii::$app->language) == 'en-us') ? 'en' : 'zh-cn',
         ];
         $this->editorConfig = count($this->editorConfig)>0 ? ArrayHelper::merge($this->_options, $this->_options) : $this->_options;
-        //
+
         $this->registerClickScript();
-        //UEditor
-        //$this->registerScript();
     }
 
-    /**
-     * ����UEditor��Ҫ�ľ�̬�ű�
-     */
     public function registerClickScript()
     {
         $view = $this->getView();
-        //ͬnamespace UEditorAsset AssetBundlUEdito
         UEditorAsset::register($view);
 
     }
@@ -46,10 +40,10 @@ class UEditor extends InputWidget{
         //
         foreach($this->editorConfig as $key=>$value){
             $key = trim($key);
-            $js .= "window.UMEDITOR_CONFIG.{$key}='{$value}';";
+            $js .= "window.UEDITOR_CONFIG.{$key}='{$value}';";
         }
         //
-        $js .= "var um = UM.getEditor('{$id}');";
+        $js .= "var ue = UE.getEditor('{$id}');";
         //
         $this->getView()->registerJs($js,View::POS_END);
         //echo Html::tag('script',null,$options);//

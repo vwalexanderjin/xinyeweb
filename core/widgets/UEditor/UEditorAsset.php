@@ -16,13 +16,13 @@ class UEditorAsset extends AssetBundle{
     public $baseUrl = '@web';
 
     public $css = [
-        'widgets/umeditor1_2_2-utf8-php/themes/default/css/umeditor.min.css',
+        'widgets/ueditor1_4_3-utf8-php/themes/default/css/ueditor.min.css',
     ];
 
     public $js = [
-        'widgets/umeditor1_2_2-utf8-php/umeditor.config.js',
-		'widgets/umeditor1_2_2-utf8-php/umeditor.min.js',
-		'widgets/umeditor1_2_2-utf8-php/lang/zh-cn/zh-cn.js',
+        'widgets/ueditor1_4_3-utf8-php/ueditor.config.js',
+		'widgets/ueditor1_4_3-utf8-php/ueditor.all.js',
+		'widgets/ueditor1_4_3-utf8-php/lang/zh-cn/zh-cn.js',
     ];
 
     public $depends = [

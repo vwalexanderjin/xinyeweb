@@ -22,6 +22,8 @@ use yii\helpers\ArrayHelper;
         <?= $form->field($model, 'info')->textarea(['rows' => 6]) ?>
 
         <?/*= $form->field($model, 'content')->textarea(['rows' => 20]) */?>
+        <?/*= $form->field($model, 'content')->widget(\app\core\widgets\UMEditor\UMEditor::className()) */?>
+
         <?= $form->field($model, 'content')->widget(\app\core\widgets\UEditor\UEditor::className()) ?>
 
 
